@@ -157,13 +157,21 @@ module.exports = async function(describe) {
 
       const detailsLabel = await page.$eval(
         '[data-i18n="details_label"]', el => el.textContent);
-      assert(detailsLabel === 'Limit details',
+      assert(detailsLabel === 'Remaining limits',
         `details_label translated (got "${detailsLabel}")`);
 
       const remainingLabel = await page.$eval(
         '[data-i18n="remaining"]', el => el.textContent);
-      assert(remainingLabel === 'remaining',
+      assert(remainingLabel === '5-hour window',
         `remaining translated (got "${remainingLabel}")`);
+
+      const secondaryLabel = await page.$eval('#secondary-label', el => el.textContent);
+      assert(secondaryLabel === 'Weekly',
+        `weekly_label translated (got "${secondaryLabel}")`);
+
+      const creditsHelp = await page.$eval('.help-tip', el => el.title);
+      assert(creditsHelp === 'Credits to keep using Codex beyond your plan limits',
+        `credits_help title translated (got "${creditsHelp}")`);
     } finally { await browser.close(); }
   });
 

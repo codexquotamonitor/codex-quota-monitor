@@ -9,7 +9,7 @@
     "message": "Límite de 5 horas"
   },
   "weekly_label": {
-    "message": "Límite semanal"
+    "message": "Semanal"
   },
   "resets_in": {
     "message": "reinicia en"
@@ -27,7 +27,7 @@
     "message": "usado"
   },
   "remaining": {
-    "message": "restante"
+    "message": "Ventana de 5 horas"
   },
   "now": {
     "message": "ahora"
@@ -138,13 +138,16 @@
     "message": "Uso de Codex"
   },
   "details_label": {
-    "message": "Detalles del límite"
+    "message": "Límites restantes"
   },
   "limit_reached": {
     "message": "Límite de uso alcanzado"
   },
   "credits_remaining": {
     "message": "Créditos restantes"
+  },
+  "credits_help": {
+    "message": "Créditos para seguir usando Codex más allá de los límites de tu plan"
   },
   "unlimited": {
     "message": "ilimitado"

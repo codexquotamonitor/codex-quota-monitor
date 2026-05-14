@@ -9,7 +9,7 @@
     "message": "৫ ঘণ্টার সীমা"
   },
   "weekly_label": {
-    "message": "সাপ্তাহিক সীমা"
+    "message": "সাপ্তাহিক"
   },
   "resets_in": {
     "message": "রিসেট হবে"
@@ -27,7 +27,7 @@
     "message": "ব্যবহৃত"
   },
   "remaining": {
-    "message": "বাকি"
+    "message": "৫ ঘণ্টার উইন্ডো"
   },
   "now": {
     "message": "এখনই"
@@ -138,13 +138,16 @@
     "message": "Codex ব্যবহার"
   },
   "details_label": {
-    "message": "সীমার বিবরণ"
+    "message": "বাকি সীমা"
   },
   "limit_reached": {
     "message": "ব্যবহারের সীমা শেষ"
   },
   "credits_remaining": {
     "message": "বাকি ক্রেডিট"
+  },
+  "credits_help": {
+    "message": "আপনার প্ল্যানের সীমার বাইরে Codex ব্যবহার চালিয়ে যাওয়ার জন্য ক্রেডিট"
   },
   "unlimited": {
     "message": "সীমাহীন"

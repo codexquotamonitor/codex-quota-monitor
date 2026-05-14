@@ -9,7 +9,7 @@
     "message": "Batas 5 jam"
   },
   "weekly_label": {
-    "message": "Batas mingguan"
+    "message": "Mingguan"
   },
   "resets_in": {
     "message": "direset dalam"
@@ -27,7 +27,7 @@
     "message": "terpakai"
   },
   "remaining": {
-    "message": "tersisa"
+    "message": "Jendela 5 jam"
   },
   "now": {
     "message": "baru saja"
@@ -138,13 +138,16 @@
     "message": "Penggunaan Codex"
   },
   "details_label": {
-    "message": "Detail batas"
+    "message": "Batas tersisa"
   },
   "limit_reached": {
     "message": "Batas penggunaan tercapai"
   },
   "credits_remaining": {
     "message": "Kredit tersisa"
+  },
+  "credits_help": {
+    "message": "Kredit untuk terus menggunakan Codex di luar batas paket Anda"
   },
   "unlimited": {
     "message": "tanpa batas"

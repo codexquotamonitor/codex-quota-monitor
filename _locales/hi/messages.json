@@ -9,7 +9,7 @@
     "message": "5 घंटे की सीमा"
   },
   "weekly_label": {
-    "message": "साप्ताहिक सीमा"
+    "message": "साप्ताहिक"
   },
   "resets_in": {
     "message": "रीसेट होगा"
@@ -27,7 +27,7 @@
     "message": "उपयोग"
   },
   "remaining": {
-    "message": "बाकी"
+    "message": "5 घंटे की अवधि"
   },
   "now": {
     "message": "अभी"
@@ -138,13 +138,16 @@
     "message": "Codex उपयोग"
   },
   "details_label": {
-    "message": "सीमा विवरण"
+    "message": "शेष सीमाएं"
   },
   "limit_reached": {
     "message": "उपयोग सीमा पूरी हुई"
   },
   "credits_remaining": {
     "message": "शेष क्रेडिट"
+  },
+  "credits_help": {
+    "message": "आपके प्लान की सीमाओं से आगे Codex का उपयोग जारी रखने के लिए क्रेडिट"
   },
   "unlimited": {
     "message": "असीमित"

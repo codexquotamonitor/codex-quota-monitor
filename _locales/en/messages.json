@@ -9,7 +9,7 @@
     "message": "5-hour limit"
   },
   "weekly_label": {
-    "message": "Weekly limit"
+    "message": "Weekly"
   },
   "resets_in": {
     "message": "resets in"
@@ -27,7 +27,7 @@
     "message": "used"
   },
   "remaining": {
-    "message": "remaining"
+    "message": "5-hour window"
   },
   "now": {
     "message": "now"
@@ -138,13 +138,16 @@
     "message": "Codex usage"
   },
   "details_label": {
-    "message": "Limit details"
+    "message": "Remaining limits"
   },
   "limit_reached": {
     "message": "Usage limit reached"
   },
   "credits_remaining": {
     "message": "Credits remaining"
+  },
+  "credits_help": {
+    "message": "Credits to keep using Codex beyond your plan limits"
   },
   "unlimited": {
     "message": "unlimited"

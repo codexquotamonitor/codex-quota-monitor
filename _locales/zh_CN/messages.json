@@ -9,7 +9,7 @@
     "message": "5 小时限制"
   },
   "weekly_label": {
-    "message": "每周限制"
+    "message": "每周"
   },
   "resets_in": {
     "message": "重置于"
@@ -27,7 +27,7 @@
     "message": "已用"
   },
   "remaining": {
-    "message": "剩余"
+    "message": "5 小时窗口"
   },
   "now": {
     "message": "刚刚"
@@ -138,13 +138,16 @@
     "message": "Codex 使用量"
   },
   "details_label": {
-    "message": "限制详情"
+    "message": "剩余额度"
   },
   "limit_reached": {
     "message": "已达到使用限制"
   },
   "credits_remaining": {
     "message": "剩余积分"
+  },
+  "credits_help": {
+    "message": "用于在超出套餐限制后继续使用 Codex 的积分"
   },
   "unlimited": {
     "message": "无限"

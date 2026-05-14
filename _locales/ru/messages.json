@@ -9,7 +9,7 @@
     "message": "Лимит 5 часов"
   },
   "weekly_label": {
-    "message": "Недельный лимит"
+    "message": "Еженедельно"
   },
   "resets_in": {
     "message": "сброс через"
@@ -27,7 +27,7 @@
     "message": "использовано"
   },
   "remaining": {
-    "message": "осталось"
+    "message": "5-часовое окно"
   },
   "now": {
     "message": "только что"
@@ -138,13 +138,16 @@
     "message": "Использование Codex"
   },
   "details_label": {
-    "message": "Детали лимита"
+    "message": "Оставшиеся лимиты"
   },
   "limit_reached": {
     "message": "Лимит использования достигнут"
   },
   "credits_remaining": {
     "message": "Осталось кредитов"
+  },
+  "credits_help": {
+    "message": "Кредиты, чтобы продолжать использовать Codex сверх лимитов вашего плана"
   },
   "unlimited": {
     "message": "без ограничений"

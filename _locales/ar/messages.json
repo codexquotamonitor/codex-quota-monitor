@@ -9,7 +9,7 @@
     "message": "حد 5 ساعات"
   },
   "weekly_label": {
-    "message": "الحد الأسبوعي"
+    "message": "أسبوعي"
   },
   "resets_in": {
     "message": "يُعاد تعيينه في"
@@ -27,7 +27,7 @@
     "message": "مستخدم"
   },
   "remaining": {
-    "message": "متبقٍ"
+    "message": "نافذة 5 ساعات"
   },
   "now": {
     "message": "الآن"
@@ -138,13 +138,16 @@
     "message": "استخدام Codex"
   },
   "details_label": {
-    "message": "تفاصيل الحد"
+    "message": "الحدود المتبقية"
   },
   "limit_reached": {
     "message": "تم بلوغ حد الاستخدام"
   },
   "credits_remaining": {
     "message": "الأرصدة المتبقية"
+  },
+  "credits_help": {
+    "message": "أرصدة لمتابعة استخدام Codex بعد تجاوز حدود خطتك"
   },
   "unlimited": {
     "message": "غير محدود"

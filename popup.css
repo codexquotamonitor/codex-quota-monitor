@@ -240,6 +240,21 @@ h1 {
   margin-bottom: 5px;
 }
 
+.credits-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.help-tip {
+  color: #a78bfa;
+  cursor: help;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 .weekly-cat-divider {
   height: 1px;
   background: var(--surface2);
