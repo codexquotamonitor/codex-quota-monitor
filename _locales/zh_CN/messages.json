@@ -1,0 +1,146 @@
+{
+  "ext_name": {
+    "message": "Codex Usage Monitor"
+  },
+  "ext_description": {
+    "message": "直接在浏览器工具栏中显示您的 Codex 使用限制。"
+  },
+  "session_label": {
+    "message": "5 小时限制"
+  },
+  "weekly_label": {
+    "message": "每周限制"
+  },
+  "resets_in": {
+    "message": "重置于"
+  },
+  "view_quota_btn": {
+    "message": "查看 Codex 使用量"
+  },
+  "no_data_hint": {
+    "message": "暂无数据。打开 Codex 以读取您的使用限制。"
+  },
+  "updated_ago": {
+    "message": "已更新"
+  },
+  "used_suffix": {
+    "message": "已用"
+  },
+  "remaining": {
+    "message": "剩余"
+  },
+  "now": {
+    "message": "刚刚"
+  },
+  "refresh_title": {
+    "message": "立即刷新"
+  },
+  "donate_btn": {
+    "message": "捐款支持"
+  },
+  "onboarding_title": {
+    "message": "欢迎使用 Codex Usage Monitor"
+  },
+  "onboarding_subtitle": {
+    "message": "直接在浏览器工具栏中跟踪 Codex 使用量。"
+  },
+  "onboarding_steps_title": {
+    "message": "快速开始 — 4 个步骤"
+  },
+  "onboarding_step1_title": {
+    "message": "打开 Codex"
+  },
+  "onboarding_step1_desc": {
+    "message": "访问 chatgpt.com/codex 并登录。扩展程序会自动读取使用数据。"
+  },
+  "onboarding_step2_title": {
+    "message": "查看工具栏图标徽标"
+  },
+  "onboarding_step2_desc": {
+    "message": "扩展图标上将显示一个徽标，显示当前会话用量（如 22%）。用量达到 70% 时变为橙色，90% 时变为红色。"
+  },
+  "onboarding_step3_title": {
+    "message": "点击查看完整详情"
+  },
+  "onboarding_step3_desc": {
+    "message": "点击图标可查看会话和每周用量、距离重置的剩余时间以及手动刷新按钮。数据每 10 分钟自动更新一次。"
+  },
+  "onboarding_cta": {
+    "message": "打开 Codex"
+  },
+  "onboarding_donate": {
+    "message": "喜欢这个扩展？捐款支持"
+  },
+  "onboarding_footer": {
+    "message": "免费开放。无需账户，不追踪数据。"
+  },
+  "pill_session": {
+    "message": "会话用量 (5小时)"
+  },
+  "pill_weekly": {
+    "message": "每周用量 (7天)"
+  },
+  "pill_auto_update": {
+    "message": "自动后台更新"
+  },
+  "pill_badge": {
+    "message": "工具栏徽标"
+  },
+  "pill_free": {
+    "message": "免费"
+  },
+  "onboarding_step4_title": {
+    "message": "将扩展程序固定到工具栏"
+  },
+  "weekly_all_models": {
+    "message": "Codex"
+  },
+  "weekly_design": {
+    "message": "积分"
+  },
+  "time_days": {
+    "message": "天"
+  },
+  "time_hours": {
+    "message": "时"
+  },
+  "time_mins": {
+    "message": "分"
+  },
+  "visit_website": {
+    "message": "访问网站"
+  },
+  "theme_to_light": {
+    "message": "切换到浅色模式"
+  },
+  "theme_to_dark": {
+    "message": "切换到深色模式"
+  },
+  "review_prompt": {
+    "message": "喜欢 Codex Usage Monitor 吗？"
+  },
+  "review_rate": {
+    "message": "立即评分"
+  },
+  "review_later": {
+    "message": "稍后再说"
+  },
+  "review_never": {
+    "message": "不再提醒"
+  },
+  "review_star_label": {
+    "message": "在 Chrome 应用商店评分"
+  },
+  "review_star_title": {
+    "message": "在 Chrome 应用商店评分"
+  },
+  "usage_label": {
+    "message": "Codex 使用量"
+  },
+  "details_label": {
+    "message": "限制详情"
+  },
+  "limit_reached": {
+    "message": "已达到使用限制"
+  }
+}

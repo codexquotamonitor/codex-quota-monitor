@@ -1,0 +1,146 @@
+{
+  "ext_name": {
+    "message": "Codex Usage Monitor"
+  },
+  "ext_description": {
+    "message": "Показывает лимиты использования Codex прямо на панели браузера."
+  },
+  "session_label": {
+    "message": "Лимит 5 часов"
+  },
+  "weekly_label": {
+    "message": "Недельный лимит"
+  },
+  "resets_in": {
+    "message": "сброс через"
+  },
+  "view_quota_btn": {
+    "message": "Посмотреть использование Codex"
+  },
+  "no_data_hint": {
+    "message": "Нет данных. Откройте Codex, чтобы получить лимиты использования."
+  },
+  "updated_ago": {
+    "message": "обновлено"
+  },
+  "used_suffix": {
+    "message": "использовано"
+  },
+  "remaining": {
+    "message": "осталось"
+  },
+  "now": {
+    "message": "только что"
+  },
+  "refresh_title": {
+    "message": "Обновить сейчас"
+  },
+  "donate_btn": {
+    "message": "Поддержать донатом"
+  },
+  "onboarding_title": {
+    "message": "Добро пожаловать в Codex Usage Monitor"
+  },
+  "onboarding_subtitle": {
+    "message": "Отслеживайте использование Codex прямо на панели браузера."
+  },
+  "onboarding_steps_title": {
+    "message": "Начало работы — 4 шага"
+  },
+  "onboarding_step1_title": {
+    "message": "Откройте Codex"
+  },
+  "onboarding_step1_desc": {
+    "message": "Перейдите на chatgpt.com/codex и войдите в аккаунт. Расширение автоматически считывает данные использования."
+  },
+  "onboarding_step2_title": {
+    "message": "Проверьте значок на панели"
+  },
+  "onboarding_step2_desc": {
+    "message": "На иконке расширения появится значок с текущим использованием сессии (например, 22%). Цвет меняется на оранжевый при 70% и красный при 90%."
+  },
+  "onboarding_step3_title": {
+    "message": "Нажмите для подробностей"
+  },
+  "onboarding_step3_desc": {
+    "message": "Нажмите на иконку, чтобы увидеть использование сессии и за неделю, время до сброса и кнопку ручного обновления. Данные обновляются автоматически каждые 10 минут."
+  },
+  "onboarding_cta": {
+    "message": "Открыть Codex"
+  },
+  "onboarding_donate": {
+    "message": "Нравится? Поддержите донатом"
+  },
+  "onboarding_footer": {
+    "message": "Бесплатно и открыто. Без аккаунта, без слежки."
+  },
+  "pill_session": {
+    "message": "Использование сессии (5ч)"
+  },
+  "pill_weekly": {
+    "message": "Еженедельное использование (7 дней)"
+  },
+  "pill_auto_update": {
+    "message": "Автоматические фоновые обновления"
+  },
+  "pill_badge": {
+    "message": "Значок на панели"
+  },
+  "pill_free": {
+    "message": "Бесплатно"
+  },
+  "onboarding_step4_title": {
+    "message": "Закрепите расширение на панели инструментов"
+  },
+  "weekly_all_models": {
+    "message": "Codex"
+  },
+  "weekly_design": {
+    "message": "Кредиты"
+  },
+  "time_days": {
+    "message": "д"
+  },
+  "time_hours": {
+    "message": "ч"
+  },
+  "time_mins": {
+    "message": "мин"
+  },
+  "visit_website": {
+    "message": "Посетить сайт"
+  },
+  "theme_to_light": {
+    "message": "Переключить на светлую тему"
+  },
+  "theme_to_dark": {
+    "message": "Переключить на тёмную тему"
+  },
+  "review_prompt": {
+    "message": "Нравится Codex Usage Monitor?"
+  },
+  "review_rate": {
+    "message": "Оценить сейчас"
+  },
+  "review_later": {
+    "message": "Может быть позже"
+  },
+  "review_never": {
+    "message": "Не напоминать"
+  },
+  "review_star_label": {
+    "message": "Оценить в Chrome Web Store"
+  },
+  "review_star_title": {
+    "message": "Оценить в Chrome Web Store"
+  },
+  "usage_label": {
+    "message": "Использование Codex"
+  },
+  "details_label": {
+    "message": "Детали лимита"
+  },
+  "limit_reached": {
+    "message": "Лимит использования достигнут"
+  }
+}

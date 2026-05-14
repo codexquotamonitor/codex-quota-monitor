@@ -1,0 +1,146 @@
+{
+  "ext_name": {
+    "message": "مراقب استخدام Codex"
+  },
+  "ext_description": {
+    "message": "يعرض حدود استخدام Codex مباشرةً في شريط أدوات المتصفح."
+  },
+  "session_label": {
+    "message": "حد 5 ساعات"
+  },
+  "weekly_label": {
+    "message": "الحد الأسبوعي"
+  },
+  "resets_in": {
+    "message": "يُعاد تعيينه في"
+  },
+  "view_quota_btn": {
+    "message": "عرض استخدام Codex"
+  },
+  "no_data_hint": {
+    "message": "لا توجد بيانات بعد. افتح Codex لقراءة حدود الاستخدام."
+  },
+  "updated_ago": {
+    "message": "تم التحديث"
+  },
+  "used_suffix": {
+    "message": "مستخدم"
+  },
+  "remaining": {
+    "message": "متبقٍ"
+  },
+  "now": {
+    "message": "الآن"
+  },
+  "refresh_title": {
+    "message": "تحديث الآن"
+  },
+  "donate_btn": {
+    "message": "ادعم بتبرع"
+  },
+  "onboarding_title": {
+    "message": "مرحبًا بك في مراقب استخدام Codex"
+  },
+  "onboarding_subtitle": {
+    "message": "تتبّع استخدام Codex مباشرةً من شريط أدوات المتصفح."
+  },
+  "onboarding_steps_title": {
+    "message": "البدء — 4 خطوات"
+  },
+  "onboarding_step1_title": {
+    "message": "افتح Codex"
+  },
+  "onboarding_step1_desc": {
+    "message": "زُر chatgpt.com/codex وسجّل الدخول. تقرأ الإضافة بيانات الاستخدام تلقائيًا."
+  },
+  "onboarding_step2_title": {
+    "message": "تحقق من شارة شريط الأدوات"
+  },
+  "onboarding_step2_desc": {
+    "message": "ستظهر شارة على أيقونة الإضافة تُظهر استخدام الجلسة الحالية (مثلاً 22%). يتغير اللون إلى البرتقالي عند 70% والأحمر عند 90%."
+  },
+  "onboarding_step3_title": {
+    "message": "انقر للاطلاع على التفاصيل الكاملة"
+  },
+  "onboarding_step3_desc": {
+    "message": "انقر على الأيقونة لرؤية استخدام جلستك وأسبوعك، والوقت المتبقي حتى إعادة الضبط، وزر التحديث اليدوي. تتحدث البيانات تلقائيًا كل 10 دقائق."
+  },
+  "onboarding_cta": {
+    "message": "افتح Codex"
+  },
+  "onboarding_donate": {
+    "message": "أعجبك؟ ادعم بتبرع"
+  },
+  "onboarding_footer": {
+    "message": "مجاني ومفتوح. بدون حساب، بدون تتبع."
+  },
+  "pill_session": {
+    "message": "استخدام الجلسة (5 ساعات)"
+  },
+  "pill_weekly": {
+    "message": "الاستخدام الأسبوعي (7 أيام)"
+  },
+  "pill_auto_update": {
+    "message": "تحديثات تلقائية في الخلفية"
+  },
+  "pill_badge": {
+    "message": "شارة في شريط الأدوات"
+  },
+  "pill_free": {
+    "message": "مجاني"
+  },
+  "onboarding_step4_title": {
+    "message": "ثبّت الإضافة في شريط الأدوات"
+  },
+  "weekly_all_models": {
+    "message": "Codex"
+  },
+  "weekly_design": {
+    "message": "الأرصدة"
+  },
+  "time_days": {
+    "message": "ي"
+  },
+  "time_hours": {
+    "message": "س"
+  },
+  "time_mins": {
+    "message": "د"
+  },
+  "visit_website": {
+    "message": "زيارة الموقع"
+  },
+  "theme_to_light": {
+    "message": "التبديل إلى الوضع الفاتح"
+  },
+  "theme_to_dark": {
+    "message": "التبديل إلى الوضع الداكن"
+  },
+  "review_prompt": {
+    "message": "هل تستمتع بمراقب استخدام Codex؟"
+  },
+  "review_rate": {
+    "message": "قيّم الآن"
+  },
+  "review_later": {
+    "message": "ربما لاحقاً"
+  },
+  "review_never": {
+    "message": "لا تذكّرني"
+  },
+  "review_star_label": {
+    "message": "التقييم على Chrome Web Store"
+  },
+  "review_star_title": {
+    "message": "التقييم على Chrome Web Store"
+  },
+  "usage_label": {
+    "message": "استخدام Codex"
+  },
+  "details_label": {
+    "message": "تفاصيل الحد"
+  },
+  "limit_reached": {
+    "message": "تم بلوغ حد الاستخدام"
+  }
+}

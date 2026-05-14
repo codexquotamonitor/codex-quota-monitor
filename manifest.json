@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_ext_name__",
+  "version": "0.1.0",
+  "description": "__MSG_ext_description__",
+  "default_locale": "pt_BR",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage", "tabs", "alarms"],
+  "host_permissions": ["https://chatgpt.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Codex Usage",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "homepage_url": "https://chatgpt.com/codex/cloud/settings/analytics",
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/codex/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

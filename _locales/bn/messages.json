@@ -1,0 +1,146 @@
+{
+  "ext_name": {
+    "message": "Codex Usage Monitor"
+  },
+  "ext_description": {
+    "message": "ব্রাউজার টুলবারে সরাসরি আপনার Codex ব্যবহারের সীমা দেখুন।"
+  },
+  "session_label": {
+    "message": "৫ ঘণ্টার সীমা"
+  },
+  "weekly_label": {
+    "message": "সাপ্তাহিক সীমা"
+  },
+  "resets_in": {
+    "message": "রিসেট হবে"
+  },
+  "view_quota_btn": {
+    "message": "Codex ব্যবহার দেখুন"
+  },
+  "no_data_hint": {
+    "message": "এখনো কোনো ডেটা নেই। ব্যবহারের সীমা দেখতে Codex খুলুন।"
+  },
+  "updated_ago": {
+    "message": "আপডেট হয়েছে"
+  },
+  "used_suffix": {
+    "message": "ব্যবহৃত"
+  },
+  "remaining": {
+    "message": "বাকি"
+  },
+  "now": {
+    "message": "এখনই"
+  },
+  "refresh_title": {
+    "message": "এখনই রিফ্রেশ করুন"
+  },
+  "donate_btn": {
+    "message": "দান দিয়ে সহায়তা করুন"
+  },
+  "onboarding_title": {
+    "message": "Codex Usage Monitor-এ স্বাগতম"
+  },
+  "onboarding_subtitle": {
+    "message": "সরাসরি ব্রাউজার টুলবারে Codex ব্যবহার ট্র্যাক করুন।"
+  },
+  "onboarding_steps_title": {
+    "message": "শুরু করুন — ৪টি ধাপ"
+  },
+  "onboarding_step1_title": {
+    "message": "Codex খুলুন"
+  },
+  "onboarding_step1_desc": {
+    "message": "chatgpt.com/codex-এ যান এবং লগ ইন করুন। এক্সটেনশন স্বয়ংক্রিয়ভাবে ব্যবহারের ডেটা পড়ে।"
+  },
+  "onboarding_step2_title": {
+    "message": "টুলবার ব্যাজ দেখুন"
+  },
+  "onboarding_step2_desc": {
+    "message": "এক্সটেনশন আইকনে একটি ব্যাজ দেখাবে যা বর্তমান সেশনের ব্যবহার দেখাবে (যেমন ২২%)। ৭০%-এ কমলা এবং ৯০%-এ লাল হয়।"
+  },
+  "onboarding_step3_title": {
+    "message": "পূর্ণ বিবরণের জন্য ক্লিক করুন"
+  },
+  "onboarding_step3_desc": {
+    "message": "আইকনে ক্লিক করে সেশন ও সাপ্তাহিক ব্যবহার, রিসেট পর্যন্ত বাকি সময় এবং ম্যানুয়াল রিফ্রেশ বাটন দেখুন। ডেটা প্রতি ১০ মিনিটে স্বয়ংক্রিয়ভাবে আপডেট হয়।"
+  },
+  "onboarding_cta": {
+    "message": "Codex খুলুন"
+  },
+  "onboarding_donate": {
+    "message": "পছন্দ হলো? দান দিয়ে সহায়তা করুন"
+  },
+  "onboarding_footer": {
+    "message": "বিনামূল্যে ও উন্মুক্ত। কোনো অ্যাকাউন্ট নেই, কোনো ট্র্যাকিং নেই।"
+  },
+  "pill_session": {
+    "message": "সেশন ব্যবহার (৫ঘ)"
+  },
+  "pill_weekly": {
+    "message": "সাপ্তাহিক ব্যবহার (৭ দিন)"
+  },
+  "pill_auto_update": {
+    "message": "স্বয়ংক্রিয় ব্যাকগ্রাউন্ড আপডেট"
+  },
+  "pill_badge": {
+    "message": "টুলবারে ব্যাজ"
+  },
+  "pill_free": {
+    "message": "বিনামূল্যে"
+  },
+  "onboarding_step4_title": {
+    "message": "টুলবারে এক্সটেনশন পিন করুন"
+  },
+  "weekly_all_models": {
+    "message": "Codex"
+  },
+  "weekly_design": {
+    "message": "ক্রেডিট"
+  },
+  "time_days": {
+    "message": "দি"
+  },
+  "time_hours": {
+    "message": "ঘ"
+  },
+  "time_mins": {
+    "message": "মি"
+  },
+  "visit_website": {
+    "message": "ওয়েবসাইট দেখুন"
+  },
+  "theme_to_light": {
+    "message": "লাইট মোডে যান"
+  },
+  "theme_to_dark": {
+    "message": "ডার্ক মোডে যান"
+  },
+  "review_prompt": {
+    "message": "Codex Usage Monitor পছন্দ হচ্ছে?"
+  },
+  "review_rate": {
+    "message": "এখনই রেট করুন"
+  },
+  "review_later": {
+    "message": "হয়তো পরে"
+  },
+  "review_never": {
+    "message": "আর মনে করিয়ে দেবেন না"
+  },
+  "review_star_label": {
+    "message": "Chrome Web Store-এ রেট করুন"
+  },
+  "review_star_title": {
+    "message": "Chrome Web Store-এ রেট করুন"
+  },
+  "usage_label": {
+    "message": "Codex ব্যবহার"
+  },
+  "details_label": {
+    "message": "সীমার বিবরণ"
+  },
+  "limit_reached": {
+    "message": "ব্যবহারের সীমা শেষ"
+  }
+}

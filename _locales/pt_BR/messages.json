@@ -1,0 +1,146 @@
+{
+  "ext_name": {
+    "message": "Codex Usage Monitor"
+  },
+  "ext_description": {
+    "message": "Exibe os limites de uso do Codex direto na barra do navegador."
+  },
+  "session_label": {
+    "message": "Limite de 5 horas"
+  },
+  "weekly_label": {
+    "message": "Limite semanal"
+  },
+  "resets_in": {
+    "message": "reinicia em"
+  },
+  "view_quota_btn": {
+    "message": "Ver uso do Codex"
+  },
+  "no_data_hint": {
+    "message": "Nenhum dado ainda. Abra o Codex para capturar seus limites de uso."
+  },
+  "updated_ago": {
+    "message": "atualizado"
+  },
+  "used_suffix": {
+    "message": "usado"
+  },
+  "remaining": {
+    "message": "restante"
+  },
+  "now": {
+    "message": "agora"
+  },
+  "refresh_title": {
+    "message": "Atualizar agora"
+  },
+  "donate_btn": {
+    "message": "Apoiar com doação"
+  },
+  "onboarding_title": {
+    "message": "Bem-vindo ao Codex Usage Monitor"
+  },
+  "onboarding_subtitle": {
+    "message": "Acompanhe o uso do Codex direto na barra do navegador."
+  },
+  "onboarding_steps_title": {
+    "message": "Primeiros passos — 4 etapas"
+  },
+  "onboarding_step1_title": {
+    "message": "Abra o Codex"
+  },
+  "onboarding_step1_desc": {
+    "message": "Acesse chatgpt.com/codex e faça login. A extensão lê os dados de uso automaticamente."
+  },
+  "onboarding_step2_title": {
+    "message": "Veja o badge na barra"
+  },
+  "onboarding_step2_desc": {
+    "message": "Um badge aparece no ícone mostrando o uso da sessão atual (ex: 22%). A cor muda para laranja em 70% e vermelho em 90%."
+  },
+  "onboarding_step3_title": {
+    "message": "Clique para ver os detalhes"
+  },
+  "onboarding_step3_desc": {
+    "message": "Clique no ícone para ver o uso da sessão e semanal, o tempo até o reset e o botão de atualização manual. Os dados são atualizados automaticamente a cada 10 minutos."
+  },
+  "onboarding_cta": {
+    "message": "Abrir Codex"
+  },
+  "onboarding_donate": {
+    "message": "Curtiu? Apoie com uma doação"
+  },
+  "onboarding_footer": {
+    "message": "Gratuito e aberto. Sem conta, sem rastreamento."
+  },
+  "pill_session": {
+    "message": "Uso da sessão (5h)"
+  },
+  "pill_weekly": {
+    "message": "Uso semanal (7 dias)"
+  },
+  "pill_auto_update": {
+    "message": "Atualização automática em segundo plano"
+  },
+  "pill_badge": {
+    "message": "Badge na barra"
+  },
+  "pill_free": {
+    "message": "Gratuito"
+  },
+  "onboarding_step4_title": {
+    "message": "Fixe a extensão na barra do navegador"
+  },
+  "weekly_all_models": {
+    "message": "Codex"
+  },
+  "weekly_design": {
+    "message": "Créditos"
+  },
+  "time_days": {
+    "message": "d"
+  },
+  "time_hours": {
+    "message": "h"
+  },
+  "time_mins": {
+    "message": "m"
+  },
+  "visit_website": {
+    "message": "Visitar site"
+  },
+  "theme_to_light": {
+    "message": "Mudar para tema claro"
+  },
+  "theme_to_dark": {
+    "message": "Mudar para tema escuro"
+  },
+  "review_prompt": {
+    "message": "Gostando do Codex Usage Monitor?"
+  },
+  "review_rate": {
+    "message": "Avaliar agora"
+  },
+  "review_later": {
+    "message": "Talvez depois"
+  },
+  "review_never": {
+    "message": "Não me lembre"
+  },
+  "review_star_label": {
+    "message": "Avaliar na Chrome Web Store"
+  },
+  "review_star_title": {
+    "message": "Avaliar na Chrome Web Store"
+  },
+  "usage_label": {
+    "message": "Uso do Codex"
+  },
+  "details_label": {
+    "message": "Detalhes do limite"
+  },
+  "limit_reached": {
+    "message": "Limite de uso atingido"
+  }
+}

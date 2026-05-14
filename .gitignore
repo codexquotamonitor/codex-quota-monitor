@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Dev & build tools (internal scripts)
+dev-tools/
+
+# Release ZIPs and backups
+releases/
+
+# Store assets (generated images & screenshots)
+store-assets/
+*.svg
+*.zip
+*.png
+!icons/*.png
+icons/*-new.png
+
+# Website files (hosted separately at claudequotamonitor.github.io)
+website/
+
+# Misc
+package-lock.json

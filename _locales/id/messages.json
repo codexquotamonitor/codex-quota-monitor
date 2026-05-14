@@ -1,0 +1,146 @@
+{
+  "ext_name": {
+    "message": "Codex Usage Monitor"
+  },
+  "ext_description": {
+    "message": "Menampilkan batas penggunaan Codex langsung di bilah alat browser."
+  },
+  "session_label": {
+    "message": "Batas 5 jam"
+  },
+  "weekly_label": {
+    "message": "Batas mingguan"
+  },
+  "resets_in": {
+    "message": "direset dalam"
+  },
+  "view_quota_btn": {
+    "message": "Lihat penggunaan Codex"
+  },
+  "no_data_hint": {
+    "message": "Belum ada data. Buka Codex untuk membaca batas penggunaan Anda."
+  },
+  "updated_ago": {
+    "message": "diperbarui"
+  },
+  "used_suffix": {
+    "message": "terpakai"
+  },
+  "remaining": {
+    "message": "tersisa"
+  },
+  "now": {
+    "message": "baru saja"
+  },
+  "refresh_title": {
+    "message": "Perbarui sekarang"
+  },
+  "donate_btn": {
+    "message": "Dukung dengan donasi"
+  },
+  "onboarding_title": {
+    "message": "Selamat datang di Codex Usage Monitor"
+  },
+  "onboarding_subtitle": {
+    "message": "Pantau penggunaan Codex langsung dari bilah alat browser."
+  },
+  "onboarding_steps_title": {
+    "message": "Memulai — 4 langkah"
+  },
+  "onboarding_step1_title": {
+    "message": "Buka Codex"
+  },
+  "onboarding_step1_desc": {
+    "message": "Kunjungi chatgpt.com/codex dan masuk. Ekstensi membaca data penggunaan secara otomatis."
+  },
+  "onboarding_step2_title": {
+    "message": "Periksa badge di bilah alat"
+  },
+  "onboarding_step2_desc": {
+    "message": "Badge akan muncul di ikon ekstensi menunjukkan penggunaan sesi saat ini (mis. 22%). Warna berubah menjadi oranye di 70% dan merah di 90%."
+  },
+  "onboarding_step3_title": {
+    "message": "Klik untuk detail lengkap"
+  },
+  "onboarding_step3_desc": {
+    "message": "Klik ikon untuk melihat penggunaan sesi dan mingguan, waktu tersisa hingga reset, dan tombol refresh manual. Data diperbarui otomatis setiap 10 menit."
+  },
+  "onboarding_cta": {
+    "message": "Buka Codex"
+  },
+  "onboarding_donate": {
+    "message": "Suka? Dukung dengan donasi"
+  },
+  "onboarding_footer": {
+    "message": "Gratis & terbuka. Tanpa akun, tanpa pelacakan."
+  },
+  "pill_session": {
+    "message": "Penggunaan sesi (5j)"
+  },
+  "pill_weekly": {
+    "message": "Penggunaan mingguan (7 hari)"
+  },
+  "pill_auto_update": {
+    "message": "Pembaruan latar belakang otomatis"
+  },
+  "pill_badge": {
+    "message": "Badge di bilah alat"
+  },
+  "pill_free": {
+    "message": "Gratis"
+  },
+  "onboarding_step4_title": {
+    "message": "Sematkan ekstensi ke bilah alat"
+  },
+  "weekly_all_models": {
+    "message": "Codex"
+  },
+  "weekly_design": {
+    "message": "Kredit"
+  },
+  "time_days": {
+    "message": "h"
+  },
+  "time_hours": {
+    "message": "j"
+  },
+  "time_mins": {
+    "message": "m"
+  },
+  "visit_website": {
+    "message": "Kunjungi situs web"
+  },
+  "theme_to_light": {
+    "message": "Beralih ke mode terang"
+  },
+  "theme_to_dark": {
+    "message": "Beralih ke mode gelap"
+  },
+  "review_prompt": {
+    "message": "Menikmati Codex Usage Monitor?"
+  },
+  "review_rate": {
+    "message": "Beri nilai sekarang"
+  },
+  "review_later": {
+    "message": "Mungkin nanti"
+  },
+  "review_never": {
+    "message": "Jangan ingatkan lagi"
+  },
+  "review_star_label": {
+    "message": "Beri nilai di Chrome Web Store"
+  },
+  "review_star_title": {
+    "message": "Beri nilai di Chrome Web Store"
+  },
+  "usage_label": {
+    "message": "Penggunaan Codex"
+  },
+  "details_label": {
+    "message": "Detail batas"
+  },
+  "limit_reached": {
+    "message": "Batas penggunaan tercapai"
+  }
+}
