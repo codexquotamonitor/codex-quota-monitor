@@ -28,6 +28,7 @@ document.getElementById('theme-btn').addEventListener('click', () => {
 
 /* ── i18n helper ── */
 const t = (key) => chrome.i18n.getMessage(key) || key;
+const tm = (key, substitutions) => chrome.i18n.getMessage(key, substitutions) || key;
 
 function applyI18n() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -86,6 +87,7 @@ function windowLabelKey(seconds) {
 }
 
 let lastTs = null;
+let lastError = null;
 
 function tickLastUpdate() {
   document.getElementById('last-update').textContent = fmtAgo(lastTs);
@@ -102,31 +104,98 @@ function setBar(barEl, pct, invert = false) {
     (riskPct >= 90 ? ' crit' : riskPct >= 70 ? ' warn' : '');
 }
 
+function currentWindow(u) {
+  if (u?.primaryWindow) return u.primaryWindow;
+  if (u?.usedPercent === undefined) return null;
+  return {
+    usedPercent: u.usedPercent,
+    remainingPercent: u.remainingPercent,
+    limitWindowSeconds: u.limitWindowSeconds,
+    resetAt: u.resetAt,
+    windowLabel: u.windowLabel || windowLabelKey(u.limitWindowSeconds)
+  };
+}
+
+function renderWindow(row, w) {
+  const used = Math.min(100, Math.max(0, w.usedPercent));
+  const remaining = w.remainingPercent !== undefined
+    ? Math.min(100, Math.max(0, w.remainingPercent))
+    : Math.max(0, 100 - used);
+  setBar(row.bar, remaining, true);
+  row.pct.textContent = `${remaining}%`;
+  row.reset.textContent = `${t('resets_in')} ${fmtReset(w.resetAt)}`;
+}
+
+function renderError(error) {
+  lastError = error ?? null;
+  const el = document.getElementById('capture-error');
+  if (!el) return;
+
+  el.classList.toggle('hidden', !lastError);
+  if (!lastError) {
+    el.textContent = '';
+    return;
+  }
+
+  const status = String(lastError.status ?? 'unknown');
+  const source = String(lastError.source ?? 'unknown');
+  el.textContent = tm('capture_error', [status, source]);
+}
+
 function render(u) {
-  const hasData = u?.usedPercent !== undefined;
+  const primary = currentWindow(u);
+  const hasData = Boolean(primary);
   document.getElementById('data-section').classList.toggle('hidden', !hasData);
   document.getElementById('empty-section').classList.toggle('hidden', hasData);
+  if (hasData) renderError(null);
   if (!hasData) return;
 
   document.getElementById('plan').textContent = titleCasePlan(u.plan);
 
-  const windowKey = u.windowLabel || windowLabelKey(u.limitWindowSeconds);
+  const windowKey = primary.windowLabel || windowLabelKey(primary.limitWindowSeconds);
   document.getElementById('usage-label').textContent = t(windowKey);
 
-  const used = Math.min(100, Math.max(0, u.usedPercent));
-  const remaining = u.remainingPercent !== undefined
-    ? Math.min(100, Math.max(0, u.remainingPercent))
+  const used = Math.min(100, Math.max(0, primary.usedPercent));
+  const remaining = primary.remainingPercent !== undefined
+    ? Math.min(100, Math.max(0, primary.remainingPercent))
     : Math.max(0, 100 - used);
 
   setBar(document.getElementById('bar'), used);
   document.getElementById('pct-text').textContent = `${used}% ${t('used_suffix')}`;
-  document.getElementById('reset-text').textContent = fmtReset(u.resetAt);
+  document.getElementById('reset-text').textContent = fmtReset(primary.resetAt);
 
   document.getElementById('weekly-row').classList.remove('hidden');
   setBar(document.getElementById('bar-weekly'), remaining, true);
   document.getElementById('weekly-pct-text').textContent = `${remaining}%`;
   document.getElementById('weekly-reset-text').textContent =
-    `${t('resets_in')} ${fmtReset(u.resetAt)}`;
+    `${t('resets_in')} ${fmtReset(primary.resetAt)}`;
+
+  const secondary = u.secondaryWindow;
+  const secondaryCat = document.getElementById('secondary-category');
+  if (secondary?.usedPercent !== undefined) {
+    secondaryCat.classList.remove('hidden');
+    document.getElementById('secondary-label').textContent =
+      t(secondary.windowLabel || windowLabelKey(secondary.limitWindowSeconds));
+    renderWindow({
+      bar: document.getElementById('bar-secondary'),
+      pct: document.getElementById('secondary-pct-text'),
+      reset: document.getElementById('secondary-reset-text')
+    }, secondary);
+  } else {
+    secondaryCat.classList.add('hidden');
+  }
+
+  const creditsCat = document.getElementById('credits-category');
+  const showCredits = u.creditsUnlimited ||
+    (u.creditsBalance !== null && u.creditsBalance !== undefined) ||
+    u.hasCredits;
+  creditsCat.classList.toggle('hidden', !showCredits);
+  if (showCredits) {
+    document.getElementById('credits-text').textContent =
+      u.creditsUnlimited ? t('unlimited') : String(u.creditsBalance ?? 0);
+    document.getElementById('credits-note').textContent =
+      u.overageLimitReached ? t('limit_reached') : '';
+  }
 
   const state = document.getElementById('limit-state');
   const blocked = u.limitReached || u.overageLimitReached || u.spendLimitReached || u.allowed === false;
@@ -139,17 +208,20 @@ function render(u) {
 
 /* ── Init ── */
 applyI18n();
-chrome.storage.local.get('codexUsage', ({ codexUsage }) => {
+chrome.storage.local.get(['codexUsage', 'codexUsageError'], ({ codexUsage, codexUsageError }) => {
   render(codexUsage ?? null);
+  if (!codexUsage) renderError(codexUsageError ?? null);
 
   if (!codexUsage?.usedPercent) {
     chrome.runtime.sendMessage({ type: 'FETCH_NOW' });
 
     const poll = setInterval(() => {
-      chrome.storage.local.get('codexUsage', ({ codexUsage: u }) => {
+      chrome.storage.local.get(['codexUsage', 'codexUsageError'], ({ codexUsage: u, codexUsageError: err }) => {
         if (u?.usedPercent !== undefined) {
           render(u);
           clearInterval(poll);
+        } else {
+          renderError(err ?? null);
         }
       });
     }, 3000);
@@ -158,6 +230,9 @@ chrome.storage.local.get('codexUsage', ({ codexUsage }) => {
 
 chrome.storage.onChanged.addListener((changes) => {
   if (changes.codexUsage) render(changes.codexUsage.newValue ?? null);
+  if (changes.codexUsageError && !changes.codexUsage?.newValue) {
+    renderError(changes.codexUsageError.newValue ?? null);
+  }
 });
 
 /* ── Buttons ── */

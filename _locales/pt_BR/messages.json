@@ -142,5 +142,14 @@
   },
   "limit_reached": {
     "message": "Limite de uso atingido"
+  },
+  "credits_remaining": {
+    "message": "Créditos restantes"
+  },
+  "unlimited": {
+    "message": "ilimitado"
+  },
+  "capture_error": {
+    "message": "A última captura falhou (HTTP $1 via $2). Recarregue a aba do Codex e tente de novo."
   }
 }

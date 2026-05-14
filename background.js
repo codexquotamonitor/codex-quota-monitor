@@ -27,16 +27,15 @@ function windowLabel(seconds) {
   return 'usage_label';
 }
 
-function normalizeUsage(data) {
-  const primary = data?.rate_limit?.primary_window;
-  if (!primary) return null;
+function normalizeWindow(w) {
+  if (!w) return null;
 
-  const usedPercent = asPercent(primary.used_percent);
+  const usedPercent = asPercent(w.used_percent);
   if (usedPercent === undefined) return null;
 
-  const limitWindowSeconds = Number(primary.limit_window_seconds) || null;
-  const resetAfterSeconds = Number(primary.reset_after_seconds) || null;
-  const resetAtSeconds = Number(primary.reset_at) || null;
+  const limitWindowSeconds = Number(w.limit_window_seconds) || null;
+  const resetAfterSeconds = Number(w.reset_after_seconds) || null;
+  const resetAtSeconds = Number(w.reset_at) || null;
   const resetAt = resetAtSeconds
     ? resetAtSeconds * 1000
     : (resetAfterSeconds ? Date.now() + resetAfterSeconds * 1000 : null);
@@ -47,13 +46,33 @@ function normalizeUsage(data) {
     limitWindowSeconds,
     resetAfterSeconds,
     resetAt,
-    windowLabel: windowLabel(limitWindowSeconds),
+    windowLabel: windowLabel(limitWindowSeconds)
+  };
+}
+
+function normalizeUsage(data) {
+  const primaryWindow = normalizeWindow(data?.rate_limit?.primary_window);
+  if (!primaryWindow) return null;
+
+  const secondaryWindow = normalizeWindow(data?.rate_limit?.secondary_window);
+  const creditsBalance = data?.credits?.balance;
+
+  return {
+    primaryWindow,
+    secondaryWindow,
+    usedPercent: primaryWindow.usedPercent,
+    remainingPercent: primaryWindow.remainingPercent,
+    limitWindowSeconds: primaryWindow.limitWindowSeconds,
+    resetAfterSeconds: primaryWindow.resetAfterSeconds,
+    resetAt: primaryWindow.resetAt,
+    windowLabel: primaryWindow.windowLabel,
     plan: normalizePlan(data?.plan_type),
     allowed: data?.rate_limit?.allowed !== false,
     limitReached: Boolean(data?.rate_limit?.limit_reached),
     hasCredits: Boolean(data?.credits?.has_credits),
     creditsUnlimited: Boolean(data?.credits?.unlimited),
     overageLimitReached: Boolean(data?.credits?.overage_limit_reached),
+    creditsBalance: Number.isFinite(Number(creditsBalance)) ? Number(creditsBalance) : null,
     spendLimitReached: Boolean(data?.spend_control?.reached),
     ts: Date.now()
   };

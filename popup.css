@@ -273,6 +273,14 @@ h1 {
 .hint a { color: #a78bfa; text-decoration: none; }
 .hint a:hover { text-decoration: underline; }
 
+.hint-error {
+  border: 1px solid rgba(221, 107, 32, 0.35);
+  border-radius: 8px;
+  color: #dd6b20;
+  line-height: 1.45;
+  padding: 8px;
+}
+
 /* ── Footer ── */
 footer {
   border-top: 1px solid var(--border);

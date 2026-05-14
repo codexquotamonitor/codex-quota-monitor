@@ -142,5 +142,14 @@
   },
   "limit_reached": {
     "message": "تم بلوغ حد الاستخدام"
+  },
+  "credits_remaining": {
+    "message": "الأرصدة المتبقية"
+  },
+  "unlimited": {
+    "message": "غير محدود"
+  },
+  "capture_error": {
+    "message": "فشلت آخر عملية التقاط (HTTP $1 عبر $2). أعد تحميل تبويب Codex وحاول مرة أخرى."
   }
 }

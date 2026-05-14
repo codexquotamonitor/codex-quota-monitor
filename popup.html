@@ -95,6 +95,27 @@
           </div>
         </div>
 
+        <div class="weekly-category hidden" id="secondary-category">
+          <div class="weekly-cat-divider"></div>
+          <div class="weekly-cat-label" id="secondary-label">—</div>
+          <div class="bar-wrapper bar-wrapper--sm">
+            <div id="bar-secondary" class="bar bar--sm"></div>
+          </div>
+          <div class="bar-meta">
+            <span id="secondary-pct-text" class="small">—</span>
+            <span id="secondary-reset-text" class="muted small">—</span>
+          </div>
+        </div>
+
+        <div class="weekly-category hidden" id="credits-category">
+          <div class="weekly-cat-divider"></div>
+          <div class="weekly-cat-label" data-i18n="credits_remaining"></div>
+          <div class="bar-meta">
+            <span id="credits-text" class="small">—</span>
+            <span id="credits-note" class="muted small">—</span>
+          </div>
+        </div>
+
       </div>
 
       <div class="update-row">
@@ -112,6 +133,7 @@
 
     <section id="empty-section">
       <p class="hint" id="no-data-hint"></p>
+      <p class="hint hint-error hidden" id="capture-error"></p>
     </section>
 
     <footer>

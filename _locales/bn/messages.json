@@ -142,5 +142,14 @@
   },
   "limit_reached": {
     "message": "ব্যবহারের সীমা শেষ"
+  },
+  "credits_remaining": {
+    "message": "বাকি ক্রেডিট"
+  },
+  "unlimited": {
+    "message": "সীমাহীন"
+  },
+  "capture_error": {
+    "message": "শেষ ক্যাপচার ব্যর্থ হয়েছে (HTTP $1 via $2)। Codex ট্যাব রিলোড করে আবার চেষ্টা করুন।"
   }
 }

@@ -7,14 +7,29 @@ const { openPopup } = require('./helpers');
 
 const FULL_DATA = {
   codexUsage: {
+    primaryWindow: {
+      usedPercent: 6,
+      remainingPercent: 94,
+      limitWindowSeconds: 18000,
+      resetAt: Date.now() + 3_600_000,
+      windowLabel: 'session_label'
+    },
+    secondaryWindow: {
+      usedPercent: 1,
+      remainingPercent: 99,
+      limitWindowSeconds: 604800,
+      resetAt: Date.now() + 597200 * 1000,
+      windowLabel: 'weekly_label'
+    },
     usedPercent: 47,
     remainingPercent: 53,
-    limitWindowSeconds: 604800,
-    resetAt: Date.now() + 597200 * 1000,
-    windowLabel: 'weekly_label',
+    limitWindowSeconds: 18000,
+    resetAt: Date.now() + 3_600_000,
+    windowLabel: 'session_label',
     plan: 'go',
     allowed: true,
     limitReached: false,
+    creditsBalance: 0,
     ts: Date.now()
   }
 };
@@ -77,7 +92,7 @@ module.exports = async function(describe) {
       assert(dataVisible, 'Data section is visible');
 
       const pct = await page.$eval('#pct-text', el => el.textContent);
-      assert(pct === '47% used', `Usage pct shows 47% used (got "${pct}")`);
+      assert(pct === '6% used', `Usage pct shows 6% used (got "${pct}")`);
 
       const plan = await page.$eval('#plan', el => el.textContent);
       assert(plan === 'Go', `Plan badge shows "Go" (got "${plan}")`);
@@ -87,7 +102,18 @@ module.exports = async function(describe) {
       assert(weeklyVisible, 'Details row is visible');
 
       const remainingPct = await page.$eval('#weekly-pct-text', el => el.textContent);
-      assert(remainingPct === '53%', `Remaining pct shows 53% (got "${remainingPct}")`);
+      assert(remainingPct === '94%', `Remaining pct shows 94% (got "${remainingPct}")`);
+
+      const secondaryVisible = await page.$eval('#secondary-category',
+        el => !el.classList.contains('hidden'));
+      assert(secondaryVisible, 'Secondary window is visible');
+
+      const secondaryPct = await page.$eval('#secondary-pct-text', el => el.textContent);
+      assert(secondaryPct === '99%', `Secondary remaining pct shows 99% (got "${secondaryPct}")`);
+
+      const creditsVisible = await page.$eval('#credits-category',
+        el => !el.classList.contains('hidden'));
+      assert(creditsVisible, 'Credits row is visible');
     } finally { await browser.close(); }
   });
 
@@ -126,7 +152,7 @@ module.exports = async function(describe) {
     const { browser, page } = await openPopup(FULL_DATA);
     try {
       const weeklyLabel = await page.$eval('#usage-label', el => el.textContent);
-      assert(weeklyLabel === 'Weekly limit',
+      assert(weeklyLabel === '5-hour limit',
         `window label translated (got "${weeklyLabel}")`);
 
       const detailsLabel = await page.$eval(
