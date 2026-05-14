@@ -81,15 +81,41 @@ function normalizeUsage(data) {
 async function fetchUsage() {
   try {
     const res = await fetch(USAGE_URL, { credentials: 'include' });
-    if (!res.ok) return;
+    if (!res.ok) {
+      chrome.storage.local.set({
+        codexUsageError: {
+          status: res.status,
+          source: 'background-cookie',
+          ts: Date.now()
+        }
+      });
+      return { ok: false, status: res.status, source: 'background-cookie' };
+    }
 
     const data = await res.json();
     const codexUsage = normalizeUsage(data);
-    if (!codexUsage) return;
+    if (!codexUsage) {
+      chrome.storage.local.set({
+        codexUsageError: {
+          status: 'invalid-response',
+          source: 'background',
+          ts: Date.now()
+        }
+      });
+      return { ok: false, status: 'invalid-response', source: 'background' };
+    }
 
-    chrome.storage.local.set({ codexUsage });
+    chrome.storage.local.set({ codexUsage, codexUsageError: null });
+    return { ok: true, source: 'background' };
   } catch {
-    // Offline, logged out, or endpoint unavailable.
+    chrome.storage.local.set({
+      codexUsageError: {
+        status: 'exception',
+        source: 'background',
+        ts: Date.now()
+      }
+    });
+    return { ok: false, status: 'exception', source: 'background' };
   }
 }
 
@@ -139,6 +165,9 @@ chrome.storage.onChanged.addListener((changes) => {
   if (changes.codexUsage) updateBadge(changes.codexUsage.newValue);
 });
 
-chrome.runtime.onMessage.addListener((msg) => {
-  if (msg?.type === 'FETCH_NOW') fetchUsage();
+chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+  if (msg?.type !== 'FETCH_NOW') return false;
+
+  fetchUsage().then(sendResponse);
+  return true;
 });

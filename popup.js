@@ -237,6 +237,9 @@ chrome.storage.onChanged.addListener((changes) => {
 
 /* ── Buttons ── */
 const CODEX_USAGE_URL = 'https://chatgpt.com/codex/cloud/settings/analytics';
+const CODEX_TAB_QUERY = 'https://chatgpt.com/codex/*';
+const SYNC_TIMEOUT_MS = 10_000;
+let syncTimer = null;
 
 document.getElementById('refresh-btn').addEventListener('click', () => {
   chrome.tabs.create({ url: CODEX_USAGE_URL });
@@ -255,11 +258,74 @@ document.getElementById('site-btn').addEventListener('click', (e) => {
 });
 
 const syncBtn = document.getElementById('sync-btn');
-syncBtn.addEventListener('click', () => {
+
+function stopSyncSpinner() {
+  clearTimeout(syncTimer);
+  syncTimer = null;
+  syncBtn.classList.remove('spinning');
+}
+
+function storeRefreshError(status, source) {
+  chrome.storage.local.set({
+    codexUsageError: {
+      status,
+      source,
+      ts: Date.now()
+    }
+  });
+}
+
+function startSyncSpinner() {
+  stopSyncSpinner();
   syncBtn.classList.add('spinning');
-  chrome.runtime.sendMessage({ type: 'FETCH_NOW' });
+  syncTimer = setTimeout(() => {
+    stopSyncSpinner();
+    storeRefreshError('timeout', 'popup');
+  }, SYNC_TIMEOUT_MS);
+}
+
+function requestBackgroundRefresh() {
+  chrome.runtime.sendMessage({ type: 'FETCH_NOW' }, (response) => {
+    if (chrome.runtime.lastError) {
+      storeRefreshError('runtime', 'popup-background');
+      stopSyncSpinner();
+      return;
+    }
+
+    if (!response?.ok) stopSyncSpinner();
+  });
+}
+
+function requestCodexTabRefresh() {
+  if (!chrome.tabs?.query || !chrome.tabs?.sendMessage) {
+    requestBackgroundRefresh();
+    return;
+  }
+
+  chrome.tabs.query({ url: CODEX_TAB_QUERY }, (tabs) => {
+    if (chrome.runtime.lastError || !tabs?.length) {
+      requestBackgroundRefresh();
+      stopSyncSpinner();
+      return;
+    }
+
+    chrome.tabs.sendMessage(tabs[0].id, { type: 'CAPTURE_USAGE_NOW' }, (response) => {
+      if (chrome.runtime.lastError) {
+        requestBackgroundRefresh();
+        stopSyncSpinner();
+        return;
+      }
+
+      if (!response?.ok) stopSyncSpinner();
+    });
+  });
+}
+
+syncBtn.addEventListener('click', () => {
+  startSyncSpinner();
+  requestCodexTabRefresh();
 });
 
 chrome.storage.onChanged.addListener((changes) => {
-  if (changes.codexUsage) syncBtn.classList.remove('spinning');
+  if (changes.codexUsage || changes.codexUsageError) stopSyncSpinner();
 });

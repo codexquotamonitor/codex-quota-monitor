@@ -93,7 +93,7 @@ function getAccessToken() {
 }
 
 async function fetchAndStoreUsage() {
-  if (inFlight) return;
+  if (inFlight) return { ok: false, status: 'busy', source: 'content' };
   inFlight = true;
 
   try {
@@ -118,12 +118,24 @@ async function fetchAndStoreUsage() {
         }
       });
       chrome.runtime.sendMessage({ type: 'FETCH_NOW' });
-      return;
+      return { ok: false, status: res.status, source: accessToken ? 'content-token' : 'content-cookie' };
     }
 
     const data = await res.json();
     const codexUsage = normalizeUsage(data);
-    if (codexUsage) chrome.storage.local.set({ codexUsage, codexUsageError: null });
+    if (!codexUsage) {
+      chrome.storage.local.set({
+        codexUsageError: {
+          status: 'invalid-response',
+          source: 'content',
+          ts: Date.now()
+        }
+      });
+      return { ok: false, status: 'invalid-response', source: 'content' };
+    }
+
+    chrome.storage.local.set({ codexUsage, codexUsageError: null });
+    return { ok: true, source: 'content' };
   } catch {
     chrome.storage.local.set({
       codexUsageError: {
@@ -133,6 +145,7 @@ async function fetchAndStoreUsage() {
       }
     });
     chrome.runtime.sendMessage({ type: 'FETCH_NOW' });
+    return { ok: false, status: 'exception', source: 'content' };
   } finally {
     inFlight = false;
   }
@@ -157,3 +170,10 @@ const startObserver = () => {
 };
 
 startObserver();
+
+chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+  if (msg?.type !== 'CAPTURE_USAGE_NOW') return false;
+
+  fetchAndStoreUsage().then(sendResponse);
+  return true;
+});
