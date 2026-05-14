@@ -351,6 +351,17 @@ footer {
   min-height: 20px;
 }
 
+.sync-status {
+  color: #a78bfa;
+  margin-right: auto;
+  max-width: 185px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sync-status.error { color: #dd6b20; }
+
 #sync-btn {
   display: flex;
   align-items: center;

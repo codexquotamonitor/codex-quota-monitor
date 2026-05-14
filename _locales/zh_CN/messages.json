@@ -35,6 +35,12 @@
   "refresh_title": {
     "message": "立即刷新"
   },
+  "opening_codex_background": {
+    "message": "正在打开 Codex..."
+  },
+  "open_codex_to_update": {
+    "message": "打开 Codex 以刷新"
+  },
   "donate_btn": {
     "message": "捐款支持"
   },

@@ -88,6 +88,7 @@ function windowLabelKey(seconds) {
 
 let lastTs = null;
 let lastError = null;
+let hasRenderedData = false;
 
 function tickLastUpdate() {
   document.getElementById('last-update').textContent = fmtAgo(lastTs);
@@ -139,12 +140,17 @@ function renderError(error) {
 
   const status = String(lastError.status ?? 'unknown');
   const source = String(lastError.source ?? 'unknown');
+  if (status === 'open-codex') {
+    el.textContent = t('open_codex_to_update');
+    return;
+  }
   el.textContent = tm('capture_error', [status, source]);
 }
 
 function render(u) {
   const primary = currentWindow(u);
   const hasData = Boolean(primary);
+  hasRenderedData = hasData;
   document.getElementById('data-section').classList.toggle('hidden', !hasData);
   document.getElementById('empty-section').classList.toggle('hidden', hasData);
   if (hasData) renderError(null);
@@ -240,6 +246,7 @@ const CODEX_USAGE_URL = 'https://chatgpt.com/codex/cloud/settings/analytics';
 const CODEX_TAB_QUERY = 'https://chatgpt.com/codex/*';
 const SYNC_TIMEOUT_MS = 10_000;
 let syncTimer = null;
+const syncStatus = document.getElementById('sync-status');
 
 document.getElementById('refresh-btn').addEventListener('click', () => {
   chrome.tabs.create({ url: CODEX_USAGE_URL });
@@ -265,6 +272,17 @@ function stopSyncSpinner() {
   syncBtn.classList.remove('spinning');
 }
 
+function showSyncStatus(messageKey, isError = false) {
+  if (!syncStatus) return;
+  syncStatus.textContent = t(messageKey);
+  syncStatus.classList.toggle('hidden', !messageKey);
+  syncStatus.classList.toggle('error', isError);
+}
+
+function clearSyncStatus() {
+  showSyncStatus('');
+}
+
 function storeRefreshError(status, source) {
   chrome.storage.local.set({
     codexUsageError: {
@@ -277,9 +295,11 @@ function storeRefreshError(status, source) {
 
 function startSyncSpinner() {
   stopSyncSpinner();
+  clearSyncStatus();
   syncBtn.classList.add('spinning');
   syncTimer = setTimeout(() => {
     stopSyncSpinner();
+    showSyncStatus('open_codex_to_update', true);
     storeRefreshError('timeout', 'popup');
   }, SYNC_TIMEOUT_MS);
 }
@@ -288,35 +308,58 @@ function requestBackgroundRefresh() {
   chrome.runtime.sendMessage({ type: 'FETCH_NOW' }, (response) => {
     if (chrome.runtime.lastError) {
       storeRefreshError('runtime', 'popup-background');
+      showSyncStatus('open_codex_to_update', true);
       stopSyncSpinner();
       return;
     }
 
-    if (!response?.ok) stopSyncSpinner();
+    if (!response?.ok) {
+      showSyncStatus('open_codex_to_update', true);
+      stopSyncSpinner();
+    }
+  });
+}
+
+function openAnalyticsTabForRefresh() {
+  if (!chrome.tabs?.create) {
+    requestBackgroundRefresh();
+    return;
+  }
+
+  chrome.tabs.create({ url: CODEX_USAGE_URL, active: false }, (tab) => {
+    if (chrome.runtime.lastError || !tab?.id) {
+      storeRefreshError('open-codex', 'popup');
+      showSyncStatus('open_codex_to_update', true);
+      stopSyncSpinner();
+      return;
+    }
+
+    showSyncStatus('opening_codex_background');
   });
 }
 
 function requestCodexTabRefresh() {
   if (!chrome.tabs?.query || !chrome.tabs?.sendMessage) {
-    requestBackgroundRefresh();
+    openAnalyticsTabForRefresh();
     return;
   }
 
   chrome.tabs.query({ url: CODEX_TAB_QUERY }, (tabs) => {
     if (chrome.runtime.lastError || !tabs?.length) {
-      requestBackgroundRefresh();
-      stopSyncSpinner();
+      openAnalyticsTabForRefresh();
       return;
     }
 
     chrome.tabs.sendMessage(tabs[0].id, { type: 'CAPTURE_USAGE_NOW' }, (response) => {
       if (chrome.runtime.lastError) {
-        requestBackgroundRefresh();
-        stopSyncSpinner();
+        openAnalyticsTabForRefresh();
         return;
       }
 
-      if (!response?.ok) stopSyncSpinner();
+      if (!response?.ok) {
+        showSyncStatus('open_codex_to_update', true);
+        stopSyncSpinner();
+      }
     });
   });
 }
@@ -327,5 +370,12 @@ syncBtn.addEventListener('click', () => {
 });
 
 chrome.storage.onChanged.addListener((changes) => {
-  if (changes.codexUsage || changes.codexUsageError) stopSyncSpinner();
+  if (changes.codexUsage) {
+    clearSyncStatus();
+    stopSyncSpinner();
+  }
+  if (changes.codexUsageError) {
+    if (hasRenderedData) showSyncStatus('open_codex_to_update', true);
+    stopSyncSpinner();
+  }
 });

@@ -35,6 +35,12 @@
   "refresh_title": {
     "message": "এখনই রিফ্রেশ করুন"
   },
+  "opening_codex_background": {
+    "message": "Codex খোলা হচ্ছে..."
+  },
+  "open_codex_to_update": {
+    "message": "আপডেট করতে Codex খুলুন"
+  },
   "donate_btn": {
     "message": "দান দিয়ে সহায়তা করুন"
   },

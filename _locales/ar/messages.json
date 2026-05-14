@@ -35,6 +35,12 @@
   "refresh_title": {
     "message": "تحديث الآن"
   },
+  "opening_codex_background": {
+    "message": "جارٍ فتح Codex..."
+  },
+  "open_codex_to_update": {
+    "message": "افتح Codex للتحديث"
+  },
   "donate_btn": {
     "message": "ادعم بتبرع"
   },
