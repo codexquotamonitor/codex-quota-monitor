@@ -340,6 +340,36 @@ function openAnalyticsTabForRefresh() {
   });
 }
 
+function pickCodexTab(tabs) {
+  return tabs.find(tab => tab.url?.startsWith(CODEX_USAGE_URL)) || tabs[0];
+}
+
+function reloadExistingCodexTab(tab) {
+  if (!tab?.id) {
+    openAnalyticsTabForRefresh();
+    return;
+  }
+
+  openedAnalyticsTabId = null;
+  showSyncStatus('opening_codex_background');
+
+  const callback = () => {
+    if (chrome.runtime.lastError) {
+      storeRefreshError('open-codex', 'popup-existing-tab');
+      showSyncStatus('open_codex_to_update', true);
+      stopSyncSpinner();
+    }
+  };
+
+  if (!tab.url?.startsWith(CODEX_USAGE_URL) && chrome.tabs?.update) {
+    chrome.tabs.update(tab.id, { url: CODEX_USAGE_URL }, callback);
+  } else if (chrome.tabs?.reload) {
+    chrome.tabs.reload(tab.id, callback);
+  } else {
+    requestBackgroundRefresh();
+  }
+}
+
 function closeOpenedAnalyticsTab() {
   if (!openedAnalyticsTabId || !chrome.tabs?.remove) return;
 
@@ -362,9 +392,11 @@ function requestCodexTabRefresh() {
       return;
     }
 
-    chrome.tabs.sendMessage(tabs[0].id, { type: 'CAPTURE_USAGE_NOW' }, (response) => {
+    const tab = pickCodexTab(tabs);
+
+    chrome.tabs.sendMessage(tab.id, { type: 'CAPTURE_USAGE_NOW' }, (response) => {
       if (chrome.runtime.lastError) {
-        openAnalyticsTabForRefresh();
+        reloadExistingCodexTab(tab);
         return;
       }
 
