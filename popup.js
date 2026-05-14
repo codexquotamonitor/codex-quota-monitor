@@ -246,6 +246,7 @@ const CODEX_USAGE_URL = 'https://chatgpt.com/codex/cloud/settings/analytics';
 const CODEX_TAB_QUERY = 'https://chatgpt.com/codex/*';
 const SYNC_TIMEOUT_MS = 10_000;
 let syncTimer = null;
+let openedAnalyticsTabId = null;
 const syncStatus = document.getElementById('sync-status');
 
 document.getElementById('refresh-btn').addEventListener('click', () => {
@@ -335,6 +336,17 @@ function openAnalyticsTabForRefresh() {
     }
 
     showSyncStatus('opening_codex_background');
+    openedAnalyticsTabId = tab.id;
+  });
+}
+
+function closeOpenedAnalyticsTab() {
+  if (!openedAnalyticsTabId || !chrome.tabs?.remove) return;
+
+  const tabId = openedAnalyticsTabId;
+  openedAnalyticsTabId = null;
+  chrome.tabs.remove(tabId, () => {
+    // The tab may already have been closed by the user.
   });
 }
 
@@ -372,9 +384,10 @@ syncBtn.addEventListener('click', () => {
 chrome.storage.onChanged.addListener((changes) => {
   if (changes.codexUsage) {
     clearSyncStatus();
+    closeOpenedAnalyticsTab();
     stopSyncSpinner();
   }
-  if (changes.codexUsageError) {
+  if (changes.codexUsageError?.newValue) {
     if (hasRenderedData) showSyncStatus('open_codex_to_update', true);
     stopSyncSpinner();
   }
