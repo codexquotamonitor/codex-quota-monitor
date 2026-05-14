@@ -98,6 +98,10 @@ async function fetchAndStoreUsage() {
 
   try {
     const accessToken = getAccessToken();
+    if (accessToken) {
+      chrome.runtime.sendMessage({ type: 'CACHE_ACCESS_TOKEN', accessToken });
+    }
+
     const headers = {
       accept: 'application/json',
       'oai-language': navigator.language || 'en-US'

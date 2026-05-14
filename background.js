@@ -10,6 +10,9 @@ const ALARM = 'codex-usage-poll';
 const POLL_MINUTES = 10;
 const USAGE_URL = 'https://chatgpt.com/backend-api/wham/usage';
 const CODEX_USAGE_URL = 'https://chatgpt.com/codex/cloud/settings/analytics';
+const ACCESS_TOKEN_KEY = 'codexAccessToken';
+
+let cachedAccessToken = null;
 
 function asPercent(value) {
   const n = Number(value);
@@ -78,43 +81,63 @@ function normalizeUsage(data) {
   };
 }
 
-async function fetchUsage() {
+function storeUsageError(status, source, quiet = false) {
+  if (quiet) return;
+  chrome.storage.local.set({
+    codexUsageError: {
+      status,
+      source,
+      ts: Date.now()
+    }
+  });
+}
+
+function cacheAccessToken(token) {
+  if (!token) return;
+  cachedAccessToken = token;
+  chrome.storage.session?.set?.({ [ACCESS_TOKEN_KEY]: token });
+}
+
+async function getAccessToken() {
+  if (cachedAccessToken) return cachedAccessToken;
+
   try {
-    const res = await fetch(USAGE_URL, { credentials: 'include' });
+    const data = await chrome.storage.session?.get?.(ACCESS_TOKEN_KEY);
+    cachedAccessToken = data?.[ACCESS_TOKEN_KEY] || null;
+    return cachedAccessToken;
+  } catch {
+    return null;
+  }
+}
+
+async function fetchUsage(options = {}) {
+  const quiet = Boolean(options.quiet);
+  try {
+    const accessToken = await getAccessToken();
+    const headers = {
+      accept: 'application/json',
+      'oai-language': chrome.i18n.getUILanguage?.() || 'en-US'
+    };
+    if (accessToken) headers.authorization = `Bearer ${accessToken}`;
+
+    const res = await fetch(USAGE_URL, { credentials: 'include', headers });
     if (!res.ok) {
-      chrome.storage.local.set({
-        codexUsageError: {
-          status: res.status,
-          source: 'background-cookie',
-          ts: Date.now()
-        }
-      });
-      return { ok: false, status: res.status, source: 'background-cookie' };
+      const source = accessToken ? 'background-token' : 'background-cookie';
+      storeUsageError(res.status, source, quiet);
+      return { ok: false, status: res.status, source };
     }
 
     const data = await res.json();
     const codexUsage = normalizeUsage(data);
     if (!codexUsage) {
-      chrome.storage.local.set({
-        codexUsageError: {
-          status: 'invalid-response',
-          source: 'background',
-          ts: Date.now()
-        }
-      });
+      storeUsageError('invalid-response', 'background', quiet);
       return { ok: false, status: 'invalid-response', source: 'background' };
     }
 
     chrome.storage.local.set({ codexUsage, codexUsageError: null });
     return { ok: true, source: 'background' };
   } catch {
-    chrome.storage.local.set({
-      codexUsageError: {
-        status: 'exception',
-        source: 'background',
-        ts: Date.now()
-      }
-    });
+    storeUsageError('exception', 'background', quiet);
     return { ok: false, status: 'exception', source: 'background' };
   }
 }
@@ -166,8 +189,14 @@ chrome.storage.onChanged.addListener((changes) => {
 });
 
 chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+  if (msg?.type === 'CACHE_ACCESS_TOKEN') {
+    cacheAccessToken(msg.accessToken);
+    sendResponse({ ok: true });
+    return false;
+  }
+
   if (msg?.type !== 'FETCH_NOW') return false;
 
-  fetchUsage().then(sendResponse);
+  fetchUsage({ quiet: msg.quiet }).then(sendResponse);
   return true;
 });

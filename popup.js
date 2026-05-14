@@ -305,16 +305,28 @@ function startSyncSpinner() {
   }, SYNC_TIMEOUT_MS);
 }
 
-function requestBackgroundRefresh() {
-  chrome.runtime.sendMessage({ type: 'FETCH_NOW' }, (response) => {
+function requestBackgroundRefresh({ quiet = false, fallbackToTab = false } = {}) {
+  chrome.runtime.sendMessage({ type: 'FETCH_NOW', quiet }, (response) => {
     if (chrome.runtime.lastError) {
-      storeRefreshError('runtime', 'popup-background');
-      showSyncStatus('open_codex_to_update', true);
+      if (fallbackToTab) {
+        requestCodexTabRefresh();
+      } else {
+        storeRefreshError('runtime', 'popup-background');
+        showSyncStatus('open_codex_to_update', true);
+        stopSyncSpinner();
+      }
+      return;
+    }
+
+    if (response?.ok) {
+      clearSyncStatus();
       stopSyncSpinner();
       return;
     }
 
-    if (!response?.ok) {
+    if (fallbackToTab) {
+      requestCodexTabRefresh();
+    } else {
       showSyncStatus('open_codex_to_update', true);
       stopSyncSpinner();
     }
@@ -410,7 +422,7 @@ function requestCodexTabRefresh() {
 
 syncBtn.addEventListener('click', () => {
   startSyncSpinner();
-  requestCodexTabRefresh();
+  requestBackgroundRefresh({ quiet: true, fallbackToTab: true });
 });
 
 chrome.storage.onChanged.addListener((changes) => {
