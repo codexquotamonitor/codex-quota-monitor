@@ -179,7 +179,7 @@ function updateBadge(u) {
   const pct = u.usedPercent;
   chrome.action.setBadgeText({ text: `${pct}%` });
   chrome.action.setBadgeBackgroundColor({
-    color: pct >= 90 ? '#e53e3e' : pct >= 70 ? '#dd6b20' : '#2f855a'
+    color: pct >= 90 ? '#ef4444' : pct >= 70 ? '#f59e0b' : '#22c55e'
   });
   chrome.action.setTitle({ title: buildTitle(u) });
 }

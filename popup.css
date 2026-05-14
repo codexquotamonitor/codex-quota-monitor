@@ -2,49 +2,57 @@
 
 /* ── Theme variables ── */
 :root {
-  --bg:             #0f0f0f;
-  --surface:        #1a1a1a;
-  --surface2:       #252525;
-  --text:           #e8e8e8;
+  --bg:             #0b0f14;
+  --surface:        #111827;
+  --surface2:       #1f2937;
+  --text:           #d1d5db;
   --text-bright:    #ffffff;
   --text-pct:       #ffffff;
-  --muted:          #555;
-  --muted-label:    #666;
-  --border:         #1a1a1a;
-  --border-accent:  #3a3a5c;
-  --badge-bg:       #1a1a2e;
-  --bar-bg:         #222;
-  --btn-bg:         #1a1a2e;
-  --btn-hover:      #252545;
+  --muted:          #8b95a1;
+  --muted-label:    #6b7280;
+  --border:         #1f2937;
+  --border-accent:  #1e8f63;
+  --badge-bg:       #062317;
+  --bar-bg:         #253142;
+  --btn-bg:         #0f2a20;
+  --btn-hover:      #143829;
   --donate-border:  #3d1f1f;
   --donate-text:    #f87171;
   --donate-hover:   #2d1010;
-  --icon-idle:      #444;
-  --weekly-text:    #ccc;
-  --hint-text:      #555;
+  --icon-idle:      #64748b;
+  --weekly-text:    #cbd5e1;
+  --hint-text:      #94a3b8;
+  --accent:         #22c55e;
+  --accent-2:       #38bdf8;
+  --warn:           #f59e0b;
+  --crit:           #ef4444;
 }
 
 :root[data-theme="light"] {
-  --bg:             #f4f4f8;
-  --surface:        #e8e8f4;
-  --surface2:       #d4d4e8;
-  --text:           #1e1e30;
-  --text-bright:    #0a0a18;
-  --text-pct:       #0a0a18;
-  --muted:          #8888aa;
-  --muted-label:    #7777aa;
-  --border:         #dedee8;
-  --border-accent:  #b0a8e0;
-  --badge-bg:       #ebe8ff;
-  --bar-bg:         #d4d4ec;
-  --btn-bg:         #ebe8ff;
-  --btn-hover:      #d8d2f8;
+  --bg:             #f7faf9;
+  --surface:        #eaf3ef;
+  --surface2:       #d6e5df;
+  --text:           #1f2937;
+  --text-bright:    #0b0f14;
+  --text-pct:       #0b0f14;
+  --muted:          #60706c;
+  --muted-label:    #68756f;
+  --border:         #d8e2df;
+  --border-accent:  #7dd3ae;
+  --badge-bg:       #e3f9ed;
+  --bar-bg:         #d4dfdf;
+  --btn-bg:         #e3f9ed;
+  --btn-hover:      #cef2dc;
   --donate-border:  #f8c0c0;
   --donate-text:    #dc2626;
   --donate-hover:   #fff0f0;
-  --icon-idle:      #9999bb;
-  --weekly-text:    #444466;
-  --hint-text:      #8888aa;
+  --icon-idle:      #7a8a86;
+  --weekly-text:    #334155;
+  --hint-text:      #6b7c78;
+  --accent:         #16a34a;
+  --accent-2:       #0284c7;
+  --warn:           #d97706;
+  --crit:           #dc2626;
 }
 
 body {
@@ -109,7 +117,7 @@ h1 {
 }
 
 #theme-btn svg { width: 13px; height: 13px; }
-#theme-btn:hover { color: #a78bfa; }
+#theme-btn:hover { color: var(--accent); }
 
 /* Show sun in dark mode (to switch to light), moon in light mode */
 #theme-btn .icon-moon { display: block; }
@@ -131,7 +139,7 @@ h1 {
 }
 
 #site-btn svg { width: 13px; height: 13px; }
-#site-btn:hover { color: #a78bfa; }
+#site-btn:hover { color: var(--accent-2); }
 
 /* ── Plan badge ── */
 .badge {
@@ -139,7 +147,7 @@ h1 {
   font-weight: 500;
   background: var(--badge-bg);
   border: 1px solid var(--border-accent);
-  color: #a78bfa;
+  color: var(--accent);
   padding: 2px 8px;
   border-radius: 20px;
 }
@@ -167,14 +175,14 @@ h1 {
 .bar {
   height: 100%;
   border-radius: 99px;
-  background: #2f855a;
+  background: var(--accent);
   transition: width 0.4s ease, background-color 0.4s ease;
   width: 0%;
 }
 
 .bar--sm { height: 100%; }
-.bar.warn { background: #dd6b20; }
-.bar.crit { background: #e53e3e; }
+.bar.warn { background: var(--warn); }
+.bar.crit { background: var(--crit); }
 
 /* ── Meta da barra principal ── */
 .bar-meta {
@@ -192,8 +200,8 @@ h1 {
 }
 
 .limit-state {
-  background: rgba(229, 62, 62, 0.12);
-  border: 1px solid rgba(229, 62, 62, 0.35);
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
   color: #fca5a5;
   border-radius: 8px;
   padding: 8px 10px;
@@ -214,7 +222,7 @@ h1 {
 #reset-text {
   font-size: 13px;
   font-weight: 600;
-  color: #a78bfa;
+  color: var(--accent-2);
 }
 
 /* ── Semanal ── */
@@ -247,7 +255,7 @@ h1 {
 }
 
 .help-tip {
-  color: #a78bfa;
+  color: var(--accent-2);
   cursor: help;
   font-size: 10px;
   font-weight: 700;
@@ -268,9 +276,9 @@ h1 {
 #weekly-reset-text,
 #weekly-design-reset-text { font-size: 11px; }
 
-.bar--design { background: #6366f1; }
-.bar--design.warn { background: #dd6b20; }
-.bar--design.crit { background: #e53e3e; }
+.bar--design { background: var(--accent-2); }
+.bar--design.warn { background: var(--warn); }
+.bar--design.crit { background: var(--crit); }
 
 /* ── Utilidades ── */
 .muted  { color: var(--muted); font-size: 12px; }
@@ -285,13 +293,13 @@ h1 {
   padding: 8px 0;
 }
 
-.hint a { color: #a78bfa; text-decoration: none; }
+.hint a { color: var(--accent-2); text-decoration: none; }
 .hint a:hover { text-decoration: underline; }
 
 .hint-error {
-  border: 1px solid rgba(221, 107, 32, 0.35);
+  border: 1px solid rgba(245, 158, 11, 0.35);
   border-radius: 8px;
-  color: #dd6b20;
+  color: var(--warn);
   line-height: 1.45;
   padding: 8px;
 }
@@ -311,7 +319,7 @@ footer {
   background: var(--btn-bg);
   border: 1px solid var(--border-accent);
   border-radius: 8px;
-  color: #a78bfa;
+  color: var(--accent);
   font-size: 12px;
   cursor: pointer;
   transition: background 0.15s;
@@ -352,7 +360,7 @@ footer {
 }
 
 .sync-status {
-  color: #a78bfa;
+  color: var(--accent-2);
   margin-right: auto;
   max-width: 185px;
   overflow: hidden;
@@ -360,7 +368,7 @@ footer {
   white-space: nowrap;
 }
 
-.sync-status.error { color: #dd6b20; }
+.sync-status.error { color: var(--warn); }
 
 #sync-btn {
   display: flex;
@@ -382,7 +390,7 @@ footer {
   transition: transform 0.15s;
 }
 
-#sync-btn:hover { color: #a78bfa; }
+#sync-btn:hover { color: var(--accent); }
 #sync-btn:hover svg { transform: rotate(30deg); }
 
 #sync-btn.spinning svg {
@@ -396,8 +404,8 @@ footer {
 /* ── Review chip (inverted theme) ── */
 /* Dark theme → chip uses light background */
 #review-chip {
-  background: #ede8ff;
-  border: 1px solid rgba(167, 139, 250, 0.4);
+  background: #e8f8ef;
+  border: 1px solid rgba(34, 197, 94, 0.35);
   border-radius: 8px;
   padding: 10px 12px;
   display: flex;
@@ -414,12 +422,12 @@ footer {
 
 /* Light theme → chip uses dark background */
 [data-theme="light"] #review-chip {
-  background: #0f0f1a;
-  border-color: rgba(167, 139, 250, 0.4);
+  background: #0b0f14;
+  border-color: rgba(56, 189, 248, 0.35);
 }
 
 [data-theme="light"] #review-chip p {
-  color: #e8e8f0;
+  color: #e5e7eb;
 }
 
 .review-actions {
@@ -442,11 +450,11 @@ footer {
 
 /* Chip buttons — dark theme (chip is light) */
 #review-btn-rate {
-  background: #a78bfa;
-  border: 1px solid #7c5cdb;
+  background: var(--accent);
+  border: 1px solid #14833f;
   color: #ffffff;
 }
-#review-btn-rate:hover { background: #9370f0; }
+#review-btn-rate:hover { background: #16a34a; }
 
 #review-btn-later,
 #review-btn-never {
@@ -459,11 +467,11 @@ footer {
 
 /* Chip buttons — light theme (chip is dark) */
 [data-theme="light"] #review-btn-rate {
-  background: #a78bfa;
-  border: 1px solid #7c5cdb;
+  background: var(--accent);
+  border: 1px solid #14833f;
   color: #ffffff;
 }
-[data-theme="light"] #review-btn-rate:hover { background: #9370f0; }
+[data-theme="light"] #review-btn-rate:hover { background: #15803d; }
 
 [data-theme="light"] #review-btn-later,
 [data-theme="light"] #review-btn-never {
@@ -519,9 +527,9 @@ footer {
 }
 #review-star-btn svg { width: 12px; height: 12px; flex-shrink: 0; }
 #review-star-btn:hover {
-  color: #f6c90e;
-  border-color: rgba(246, 201, 14, 0.5);
-  background: rgba(246, 201, 14, 0.05);
+  color: var(--warn);
+  border-color: rgba(245, 158, 11, 0.5);
+  background: rgba(245, 158, 11, 0.05);
 }
 
 .hidden { display: none !important; }
