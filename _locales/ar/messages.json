@@ -18,7 +18,7 @@
     "message": "يُعاد تعيينه في"
   },
   "view_quota_btn": {
-    "message": "عرض استخدام Codex"
+    "message": "عرض تحليلات Codex"
   },
   "no_data_hint": {
     "message": "لا توجد بيانات بعد. افتح Codex لقراءة حدود الاستخدام."

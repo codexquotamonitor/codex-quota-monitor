@@ -18,7 +18,7 @@
     "message": "reinicia en"
   },
   "view_quota_btn": {
-    "message": "Ver uso de Codex"
+    "message": "Ver analítica de Codex"
   },
   "no_data_hint": {
     "message": "Sin datos aún. Abre Codex para capturar tus límites de uso."

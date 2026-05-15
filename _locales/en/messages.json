@@ -18,7 +18,7 @@
     "message": "resets in"
   },
   "view_quota_btn": {
-    "message": "View Codex usage"
+    "message": "View Codex analytics"
   },
   "no_data_hint": {
     "message": "No data yet. Open Codex to capture your usage limits."

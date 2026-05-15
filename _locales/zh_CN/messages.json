@@ -18,7 +18,7 @@
     "message": "重置于"
   },
   "view_quota_btn": {
-    "message": "查看 Codex 使用量"
+    "message": "查看 Codex 分析"
   },
   "no_data_hint": {
     "message": "暂无数据。打开 Codex 以读取您的使用限制。"
