@@ -69,6 +69,19 @@ const BLOCKED_DATA = {
   }
 };
 
+const STALE_DATA = {
+  codexUsage: {
+    usedPercent: 24,
+    remainingPercent: 76,
+    limitWindowSeconds: 18000,
+    resetAt: Date.now() - 60_000,
+    plan: 'plus',
+    allowed: true,
+    limitReached: false,
+    ts: Date.now() - 31 * 60_000
+  }
+};
+
 module.exports = async function(describe) {
 
   await describe('Empty state (no data)', async (assert) => {
@@ -145,6 +158,19 @@ module.exports = async function(describe) {
       const visible = await page.$eval('#limit-state',
         el => !el.classList.contains('hidden'));
       assert(visible, 'Limit reached banner is visible');
+    } finally { await browser.close(); }
+  });
+
+  await describe('Stale data state', async (assert) => {
+    const { browser, page } = await openPopup(STALE_DATA);
+    try {
+      const visible = await page.$eval('#stale-state',
+        el => !el.classList.contains('hidden'));
+      assert(visible, 'Stale data banner is visible');
+
+      const text = await page.$eval('#stale-state', el => el.textContent);
+      assert(text === 'Data may be outdated',
+        `stale data message translated (got "${text}")`);
     } finally { await browser.close(); }
   });
 

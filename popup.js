@@ -105,17 +105,7 @@ function setBar(barEl, pct, invert = false) {
     (riskPct >= 90 ? ' crit' : riskPct >= 70 ? ' warn' : '');
 }
 
-function currentWindow(u) {
-  if (u?.primaryWindow) return u.primaryWindow;
-  if (u?.usedPercent === undefined) return null;
-  return {
-    usedPercent: u.usedPercent,
-    remainingPercent: u.remainingPercent,
-    limitWindowSeconds: u.limitWindowSeconds,
-    resetAt: u.resetAt,
-    windowLabel: u.windowLabel || windowLabelKey(u.limitWindowSeconds)
-  };
-}
+const { currentWindow, isUsageStale } = CodexUsage;
 
 function renderWindow(row, w) {
   const used = Math.min(100, Math.max(0, w.usedPercent));
@@ -207,6 +197,11 @@ function render(u) {
   const blocked = u.limitReached || u.overageLimitReached || u.spendLimitReached || u.allowed === false;
   state.classList.toggle('hidden', !blocked);
   if (blocked) state.textContent = t('limit_reached');
+
+  const staleState = document.getElementById('stale-state');
+  const stale = isUsageStale(u);
+  staleState.classList.toggle('hidden', !stale || blocked);
+  staleState.textContent = stale ? t('stale_data') : '';
 
   lastTs = u.ts ?? null;
   tickLastUpdate();

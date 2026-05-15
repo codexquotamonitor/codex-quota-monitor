@@ -17,6 +17,9 @@ const popupCss = fs.readFileSync(
 const popupJs = fs.readFileSync(
   path.join(__dirname, '..', 'popup.js'), 'utf8'
 );
+const usageJs = fs.readFileSync(
+  path.join(__dirname, '..', 'usage.js'), 'utf8'
+);
 
 // Carrega as strings de i18n do locale EN
 const enMessages = JSON.parse(fs.readFileSync(
@@ -66,6 +69,7 @@ function buildPage(storageData = {}) {
   // Inline o CSS e injeta o mock antes do popup.js
   return popupHtml
     .replace('<link rel="stylesheet" href="popup.css"/>', `<style>${popupCss}</style>`)
+    .replace('<script src="usage.js"></script>', `<script>${usageJs}</script>`)
     .replace('<script src="popup.js"></script>',
       `<script>${chromeMock}</script><script>${popupJs}</script>`);
 }

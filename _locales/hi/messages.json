@@ -149,6 +149,9 @@
   "limit_reached": {
     "message": "उपयोग सीमा पूरी हुई"
   },
+  "stale_data": {
+    "message": "डेटा पुराना हो सकता है"
+  },
   "credits_remaining": {
     "message": "शेष क्रेडिट"
   },

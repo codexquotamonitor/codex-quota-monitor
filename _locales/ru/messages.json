@@ -149,6 +149,9 @@
   "limit_reached": {
     "message": "Лимит использования достигнут"
   },
+  "stale_data": {
+    "message": "Данные могут быть устаревшими"
+  },
   "credits_remaining": {
     "message": "Осталось кредитов"
   },

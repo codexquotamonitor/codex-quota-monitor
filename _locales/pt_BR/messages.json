@@ -149,6 +149,9 @@
   "limit_reached": {
     "message": "Limite de uso atingido"
   },
+  "stale_data": {
+    "message": "Dados possivelmente desatualizados"
+  },
   "credits_remaining": {
     "message": "Créditos restantes"
   },

@@ -12,74 +12,7 @@ const POLL_MS = 5 * 60 * 1000;
 
 let refreshTimer = null;
 let inFlight = false;
-
-function asPercent(value) {
-  const n = Number(value);
-  if (!Number.isFinite(n)) return undefined;
-  return Math.min(100, Math.max(0, Math.round(n)));
-}
-
-function normalizePlan(plan) {
-  return typeof plan === 'string' && plan.trim() ? plan.trim() : undefined;
-}
-
-function windowLabel(seconds) {
-  if (seconds === 604800) return 'weekly_label';
-  if (seconds === 18000) return 'session_label';
-  return 'usage_label';
-}
-
-function normalizeWindow(w) {
-  if (!w) return null;
-
-  const usedPercent = asPercent(w.used_percent);
-  if (usedPercent === undefined) return null;
-
-  const limitWindowSeconds = Number(w.limit_window_seconds) || null;
-  const resetAfterSeconds = Number(w.reset_after_seconds) || null;
-  const resetAtSeconds = Number(w.reset_at) || null;
-  const resetAt = resetAtSeconds
-    ? resetAtSeconds * 1000
-    : (resetAfterSeconds ? Date.now() + resetAfterSeconds * 1000 : null);
-
-  return {
-    usedPercent,
-    remainingPercent: Math.max(0, 100 - usedPercent),
-    limitWindowSeconds,
-    resetAfterSeconds,
-    resetAt,
-    windowLabel: windowLabel(limitWindowSeconds)
-  };
-}
-
-function normalizeUsage(data) {
-  const primaryWindow = normalizeWindow(data?.rate_limit?.primary_window);
-  if (!primaryWindow) return null;
-
-  const secondaryWindow = normalizeWindow(data?.rate_limit?.secondary_window);
-  const creditsBalance = data?.credits?.balance;
-
-  return {
-    primaryWindow,
-    secondaryWindow,
-    usedPercent: primaryWindow.usedPercent,
-    remainingPercent: primaryWindow.remainingPercent,
-    limitWindowSeconds: primaryWindow.limitWindowSeconds,
-    resetAfterSeconds: primaryWindow.resetAfterSeconds,
-    resetAt: primaryWindow.resetAt,
-    windowLabel: primaryWindow.windowLabel,
-    plan: normalizePlan(data?.plan_type),
-    allowed: data?.rate_limit?.allowed !== false,
-    limitReached: Boolean(data?.rate_limit?.limit_reached),
-    hasCredits: Boolean(data?.credits?.has_credits),
-    creditsUnlimited: Boolean(data?.credits?.unlimited),
-    overageLimitReached: Boolean(data?.credits?.overage_limit_reached),
-    creditsBalance: Number.isFinite(Number(creditsBalance)) ? Number(creditsBalance) : null,
-    spendLimitReached: Boolean(data?.spend_control?.reached),
-    source: 'content',
-    ts: Date.now()
-  };
-}
+const { normalizeUsage } = CodexUsage;
 
 function getAccessToken() {
   try {
@@ -126,7 +59,7 @@ async function fetchAndStoreUsage() {
     }
 
     const data = await res.json();
-    const codexUsage = normalizeUsage(data);
+    const codexUsage = normalizeUsage(data, { source: 'content' });
     if (!codexUsage) {
       chrome.storage.local.set({
         codexUsageError: {

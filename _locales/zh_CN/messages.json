@@ -149,6 +149,9 @@
   "limit_reached": {
     "message": "已达到使用限制"
   },
+  "stale_data": {
+    "message": "数据可能已过期"
+  },
   "credits_remaining": {
     "message": "剩余积分"
   },

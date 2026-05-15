@@ -149,6 +149,9 @@
   "limit_reached": {
     "message": "ব্যবহারের সীমা শেষ"
   },
+  "stale_data": {
+    "message": "ডেটা পুরোনো হতে পারে"
+  },
   "credits_remaining": {
     "message": "বাকি ক্রেডিট"
   },

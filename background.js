@@ -1,3 +1,5 @@
+importScripts('usage.js');
+
 /**
  * Service worker for Codex Usage Monitor.
  *
@@ -20,73 +22,7 @@ const AUTH_SESSION_URLS = [
 
 let cachedAccessToken = null;
 let cachedAccessTokenExpiresAt = 0;
-
-function asPercent(value) {
-  const n = Number(value);
-  if (!Number.isFinite(n)) return undefined;
-  return Math.min(100, Math.max(0, Math.round(n)));
-}
-
-function normalizePlan(plan) {
-  return typeof plan === 'string' && plan.trim() ? plan.trim() : undefined;
-}
-
-function windowLabel(seconds) {
-  if (seconds === 604800) return 'weekly_label';
-  if (seconds === 18000) return 'session_label';
-  return 'usage_label';
-}
-
-function normalizeWindow(w) {
-  if (!w) return null;
-
-  const usedPercent = asPercent(w.used_percent);
-  if (usedPercent === undefined) return null;
-
-  const limitWindowSeconds = Number(w.limit_window_seconds) || null;
-  const resetAfterSeconds = Number(w.reset_after_seconds) || null;
-  const resetAtSeconds = Number(w.reset_at) || null;
-  const resetAt = resetAtSeconds
-    ? resetAtSeconds * 1000
-    : (resetAfterSeconds ? Date.now() + resetAfterSeconds * 1000 : null);
-
-  return {
-    usedPercent,
-    remainingPercent: Math.max(0, 100 - usedPercent),
-    limitWindowSeconds,
-    resetAfterSeconds,
-    resetAt,
-    windowLabel: windowLabel(limitWindowSeconds)
-  };
-}
-
-function normalizeUsage(data) {
-  const primaryWindow = normalizeWindow(data?.rate_limit?.primary_window);
-  if (!primaryWindow) return null;
-
-  const secondaryWindow = normalizeWindow(data?.rate_limit?.secondary_window);
-  const creditsBalance = data?.credits?.balance;
-
-  return {
-    primaryWindow,
-    secondaryWindow,
-    usedPercent: primaryWindow.usedPercent,
-    remainingPercent: primaryWindow.remainingPercent,
-    limitWindowSeconds: primaryWindow.limitWindowSeconds,
-    resetAfterSeconds: primaryWindow.resetAfterSeconds,
-    resetAt: primaryWindow.resetAt,
-    windowLabel: primaryWindow.windowLabel,
-    plan: normalizePlan(data?.plan_type),
-    allowed: data?.rate_limit?.allowed !== false,
-    limitReached: Boolean(data?.rate_limit?.limit_reached),
-    hasCredits: Boolean(data?.credits?.has_credits),
-    creditsUnlimited: Boolean(data?.credits?.unlimited),
-    overageLimitReached: Boolean(data?.credits?.overage_limit_reached),
-    creditsBalance: Number.isFinite(Number(creditsBalance)) ? Number(creditsBalance) : null,
-    spendLimitReached: Boolean(data?.spend_control?.reached),
-    ts: Date.now()
-  };
-}
+const { normalizeUsage } = CodexUsage;
 
 function storeUsageError(status, source, quiet = false) {
   if (quiet) return;
@@ -218,7 +154,7 @@ async function fetchUsage(options = {}) {
     }
 
     const data = await res.json();
-    const codexUsage = normalizeUsage(data);
+    const codexUsage = normalizeUsage(data, { source: 'background' });
     if (!codexUsage) {
       storeUsageError('invalid-response', 'background', quiet);
       return { ok: false, status: 'invalid-response', source: 'background' };

@@ -31,6 +31,9 @@
   --limit-bg:       rgba(239, 68, 68, 0.12);
   --limit-border:   rgba(239, 68, 68, 0.35);
   --limit-text:     #fca5a5;
+  --stale-bg:       rgba(245, 158, 11, 0.12);
+  --stale-border:   rgba(245, 158, 11, 0.35);
+  --stale-text:     #fcd34d;
 }
 
 :root[data-theme="light"] {
@@ -63,6 +66,9 @@
   --limit-bg:       #fee2e2;
   --limit-border:   #fca5a5;
   --limit-text:     #b91c1c;
+  --stale-bg:       #fef3c7;
+  --stale-border:   #fbbf24;
+  --stale-text:     #92400e;
 }
 
 body {
@@ -213,6 +219,17 @@ h1 {
   background: var(--limit-bg);
   border: 1px solid var(--limit-border);
   color: var(--limit-text);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.stale-state {
+  background: var(--stale-bg);
+  border: 1px solid var(--stale-border);
+  color: var(--stale-text);
   border-radius: 8px;
   padding: 8px 10px;
   font-size: 12px;
