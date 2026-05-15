@@ -184,7 +184,7 @@ chrome.runtime.onStartup.addListener(restoreAndRefresh);
 chrome.runtime.onInstalled.addListener((details) => {
   restoreAndRefresh();
   if (details.reason === 'install') {
-    chrome.tabs.create({ url: CODEX_USAGE_URL });
+    chrome.tabs.create({ url: chrome.runtime.getURL('onboarding.html') });
   }
 });
 

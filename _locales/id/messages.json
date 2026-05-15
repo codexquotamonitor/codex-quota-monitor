@@ -98,6 +98,9 @@
   "onboarding_step4_title": {
     "message": "Sematkan ekstensi ke bilah alat"
   },
+  "onboarding_step4_desc": {
+    "message": "Gunakan menu ekstensi browser untuk menyematkan Codex Usage Monitor dan menjaga badge tetap terlihat."
+  },
   "weekly_all_models": {
     "message": "Codex"
   },

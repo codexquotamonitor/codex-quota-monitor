@@ -98,6 +98,9 @@
   "onboarding_step4_title": {
     "message": "Закрепите расширение на панели инструментов"
   },
+  "onboarding_step4_desc": {
+    "message": "Используйте меню расширений браузера, чтобы закрепить Codex Usage Monitor и оставить значок видимым."
+  },
   "weekly_all_models": {
     "message": "Codex"
   },

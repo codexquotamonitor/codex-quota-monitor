@@ -45,7 +45,7 @@
     "message": "Apoiar com doação"
   },
   "onboarding_title": {
-    "message": "Bem-vindo ao Codex Usage Monitor"
+    "message": "Bem-vindo ao <span>Codex Usage</span> Monitor"
   },
   "onboarding_subtitle": {
     "message": "Acompanhe o uso do Codex direto na barra do navegador."
@@ -57,7 +57,7 @@
     "message": "Abra o Codex"
   },
   "onboarding_step1_desc": {
-    "message": "Acesse chatgpt.com/codex e faça login. A extensão lê os dados de uso automaticamente."
+    "message": "Abra o Analytics do Codex e faça login. A extensão captura seus limites automaticamente a partir da sua sessão do ChatGPT."
   },
   "onboarding_step2_title": {
     "message": "Veja o badge na barra"
@@ -69,7 +69,7 @@
     "message": "Clique para ver os detalhes"
   },
   "onboarding_step3_desc": {
-    "message": "Clique no ícone para ver o uso da sessão e semanal, o tempo até o reset e o botão de atualização manual. Os dados são atualizados automaticamente a cada 10 minutos."
+    "message": "Clique no ícone para ver as janelas de 5 horas e semanal, créditos restantes, tempo até o reset e atualização manual."
   },
   "onboarding_cta": {
     "message": "Abrir Codex"
@@ -97,6 +97,9 @@
   },
   "onboarding_step4_title": {
     "message": "Fixe a extensão na barra do navegador"
+  },
+  "onboarding_step4_desc": {
+    "message": "Use o menu de extensões do navegador para fixar o Codex Usage Monitor e deixar o badge sempre visível."
   },
   "weekly_all_models": {
     "message": "Codex"

@@ -98,6 +98,9 @@
   "onboarding_step4_title": {
     "message": "एक्सटेंशन को टूलबार में पिन करें"
   },
+  "onboarding_step4_desc": {
+    "message": "Codex Usage Monitor को पिन करने और बैज को दिखाई देने के लिए ब्राउज़र के एक्सटेंशन मेनू का उपयोग करें।"
+  },
   "weekly_all_models": {
     "message": "Codex"
   },

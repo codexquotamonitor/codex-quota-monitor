@@ -98,6 +98,9 @@
   "onboarding_step4_title": {
     "message": "将扩展程序固定到工具栏"
   },
+  "onboarding_step4_desc": {
+    "message": "使用浏览器扩展程序菜单固定 Codex Usage Monitor，并让徽标始终可见。"
+  },
   "weekly_all_models": {
     "message": "Codex"
   },

@@ -45,7 +45,7 @@
     "message": "Support with a donation"
   },
   "onboarding_title": {
-    "message": "Welcome to Codex Usage Monitor"
+    "message": "Welcome to <span>Codex Usage</span> Monitor"
   },
   "onboarding_subtitle": {
     "message": "Track your Codex usage directly in the browser toolbar."
@@ -57,7 +57,7 @@
     "message": "Open Codex"
   },
   "onboarding_step1_desc": {
-    "message": "Visit chatgpt.com/codex and log in. The extension reads usage data automatically."
+    "message": "Open Codex Analytics and log in. The extension captures your limits automatically from your ChatGPT session."
   },
   "onboarding_step2_title": {
     "message": "Check the toolbar badge"
@@ -69,7 +69,7 @@
     "message": "Click for full details"
   },
   "onboarding_step3_desc": {
-    "message": "Click the icon to see your session and weekly usage, remaining time until reset, and a manual refresh button. Data updates automatically every 10 minutes."
+    "message": "Click the icon to see your 5-hour and weekly windows, remaining credits, reset timing, and manual refresh."
   },
   "onboarding_cta": {
     "message": "Open Codex"
@@ -97,6 +97,9 @@
   },
   "onboarding_step4_title": {
     "message": "Pin the extension to your toolbar"
+  },
+  "onboarding_step4_desc": {
+    "message": "Use your browser extensions menu to pin Codex Usage Monitor and keep the badge visible."
   },
   "weekly_all_models": {
     "message": "Codex"

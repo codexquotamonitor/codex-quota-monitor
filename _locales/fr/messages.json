@@ -98,6 +98,9 @@
   "onboarding_step4_title": {
     "message": "Épinglez l'extension dans la barre d'outils"
   },
+  "onboarding_step4_desc": {
+    "message": "Utilisez le menu des extensions du navigateur pour épingler Codex Usage Monitor et garder le badge visible."
+  },
   "weekly_all_models": {
     "message": "Codex"
   },

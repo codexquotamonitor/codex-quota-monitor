@@ -98,6 +98,9 @@
   "onboarding_step4_title": {
     "message": "Fija la extensión en la barra del navegador"
   },
+  "onboarding_step4_desc": {
+    "message": "Usa el menú de extensiones del navegador para fijar Codex Usage Monitor y mantener visible el badge."
+  },
   "weekly_all_models": {
     "message": "Codex"
   },
