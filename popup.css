@@ -26,6 +26,9 @@
   --accent-2:       #38bdf8;
   --warn:           #f59e0b;
   --crit:           #ef4444;
+  --limit-bg:       rgba(239, 68, 68, 0.12);
+  --limit-border:   rgba(239, 68, 68, 0.35);
+  --limit-text:     #fca5a5;
 }
 
 :root[data-theme="light"] {
@@ -53,6 +56,9 @@
   --accent-2:       #0284c7;
   --warn:           #d97706;
   --crit:           #dc2626;
+  --limit-bg:       #fee2e2;
+  --limit-border:   #fca5a5;
+  --limit-text:     #b91c1c;
 }
 
 body {
@@ -200,9 +206,9 @@ h1 {
 }
 
 .limit-state {
-  background: rgba(239, 68, 68, 0.12);
-  border: 1px solid rgba(239, 68, 68, 0.35);
-  color: #fca5a5;
+  background: var(--limit-bg);
+  border: 1px solid var(--limit-border);
+  color: var(--limit-text);
   border-radius: 8px;
   padding: 8px 10px;
   font-size: 12px;
