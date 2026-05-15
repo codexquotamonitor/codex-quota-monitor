@@ -11,9 +11,9 @@
   --muted:          #8b95a1;
   --muted-label:    #6b7280;
   --border:         #1f2937;
-  --brand:          #ff9800;
+  --brand:          #e67e00;
   --brand-text:     #ffb74d;
-  --border-accent:  rgba(255, 152, 0, 0.58);
+  --border-accent:  rgba(230, 126, 0, 0.58);
   --badge-bg:       #241607;
   --bar-bg:         #253142;
   --btn-bg:         #241607;
@@ -46,9 +46,9 @@
   --muted:          #60706c;
   --muted-label:    #68756f;
   --border:         #d8e2df;
-  --brand:          #ff9800;
+  --brand:          #e67e00;
   --brand-text:     #b45309;
-  --border-accent:  #f59e0b;
+  --border-accent:  #e67e00;
   --badge-bg:       #fff3e0;
   --bar-bg:         #d4dfdf;
   --btn-bg:         #fff3e0;
@@ -432,7 +432,7 @@ footer {
 /* Dark theme → chip uses light background */
 #review-chip {
   background: #fff3e0;
-  border: 1px solid rgba(255, 152, 0, 0.4);
+  border: 1px solid rgba(230, 126, 0, 0.4);
   border-radius: 8px;
   padding: 10px 12px;
   display: flex;
@@ -450,7 +450,7 @@ footer {
 /* Light theme → chip uses dark background */
 [data-theme="light"] #review-chip {
   background: #0b0f14;
-  border-color: rgba(255, 152, 0, 0.45);
+  border-color: rgba(230, 126, 0, 0.45);
 }
 
 [data-theme="light"] #review-chip p {
@@ -478,10 +478,10 @@ footer {
 /* Chip buttons — dark theme (chip is light) */
 #review-btn-rate {
   background: var(--brand);
-  border: 1px solid #cc7a00;
+  border: 1px solid #b45f00;
   color: #ffffff;
 }
-#review-btn-rate:hover { background: #e68a00; }
+#review-btn-rate:hover { background: #cc6d00; }
 
 #review-btn-later,
 #review-btn-never {
@@ -495,10 +495,10 @@ footer {
 /* Chip buttons — light theme (chip is dark) */
 [data-theme="light"] #review-btn-rate {
   background: var(--brand);
-  border: 1px solid #cc7a00;
+  border: 1px solid #b45f00;
   color: #ffffff;
 }
-[data-theme="light"] #review-btn-rate:hover { background: #e68a00; }
+[data-theme="light"] #review-btn-rate:hover { background: #cc6d00; }
 
 [data-theme="light"] #review-btn-later,
 [data-theme="light"] #review-btn-never {
