@@ -11,11 +11,13 @@
   --muted:          #8b95a1;
   --muted-label:    #6b7280;
   --border:         #1f2937;
-  --border-accent:  #1e8f63;
-  --badge-bg:       #062317;
+  --brand:          #ff9800;
+  --brand-text:     #ffb74d;
+  --border-accent:  rgba(255, 152, 0, 0.58);
+  --badge-bg:       #241607;
   --bar-bg:         #253142;
-  --btn-bg:         #0f2a20;
-  --btn-hover:      #143829;
+  --btn-bg:         #241607;
+  --btn-hover:      #321d09;
   --donate-border:  #3d1f1f;
   --donate-text:    #f87171;
   --donate-hover:   #2d1010;
@@ -41,11 +43,13 @@
   --muted:          #60706c;
   --muted-label:    #68756f;
   --border:         #d8e2df;
-  --border-accent:  #7dd3ae;
-  --badge-bg:       #e3f9ed;
+  --brand:          #ff9800;
+  --brand-text:     #b45309;
+  --border-accent:  #f59e0b;
+  --badge-bg:       #fff3e0;
   --bar-bg:         #d4dfdf;
-  --btn-bg:         #e3f9ed;
-  --btn-hover:      #cef2dc;
+  --btn-bg:         #fff3e0;
+  --btn-hover:      #ffe4b5;
   --donate-border:  #f8c0c0;
   --donate-text:    #dc2626;
   --donate-hover:   #fff0f0;
@@ -123,7 +127,7 @@ h1 {
 }
 
 #theme-btn svg { width: 13px; height: 13px; }
-#theme-btn:hover { color: var(--accent); }
+#theme-btn:hover { color: var(--brand); }
 
 /* Show sun in dark mode (to switch to light), moon in light mode */
 #theme-btn .icon-moon { display: block; }
@@ -153,7 +157,7 @@ h1 {
   font-weight: 500;
   background: var(--badge-bg);
   border: 1px solid var(--border-accent);
-  color: var(--accent);
+  color: var(--brand-text);
   padding: 2px 8px;
   border-radius: 20px;
 }
@@ -325,7 +329,7 @@ footer {
   background: var(--btn-bg);
   border: 1px solid var(--border-accent);
   border-radius: 8px;
-  color: var(--accent);
+  color: var(--brand-text);
   font-size: 12px;
   cursor: pointer;
   transition: background 0.15s;
@@ -396,7 +400,7 @@ footer {
   transition: transform 0.15s;
 }
 
-#sync-btn:hover { color: var(--accent); }
+#sync-btn:hover { color: var(--brand); }
 #sync-btn:hover svg { transform: rotate(30deg); }
 
 #sync-btn.spinning svg {
@@ -410,8 +414,8 @@ footer {
 /* ── Review chip (inverted theme) ── */
 /* Dark theme → chip uses light background */
 #review-chip {
-  background: #e8f8ef;
-  border: 1px solid rgba(34, 197, 94, 0.35);
+  background: #fff3e0;
+  border: 1px solid rgba(255, 152, 0, 0.4);
   border-radius: 8px;
   padding: 10px 12px;
   display: flex;
@@ -429,7 +433,7 @@ footer {
 /* Light theme → chip uses dark background */
 [data-theme="light"] #review-chip {
   background: #0b0f14;
-  border-color: rgba(56, 189, 248, 0.35);
+  border-color: rgba(255, 152, 0, 0.45);
 }
 
 [data-theme="light"] #review-chip p {
@@ -456,11 +460,11 @@ footer {
 
 /* Chip buttons — dark theme (chip is light) */
 #review-btn-rate {
-  background: var(--accent);
-  border: 1px solid #14833f;
+  background: var(--brand);
+  border: 1px solid #cc7a00;
   color: #ffffff;
 }
-#review-btn-rate:hover { background: #16a34a; }
+#review-btn-rate:hover { background: #e68a00; }
 
 #review-btn-later,
 #review-btn-never {
@@ -473,11 +477,11 @@ footer {
 
 /* Chip buttons — light theme (chip is dark) */
 [data-theme="light"] #review-btn-rate {
-  background: var(--accent);
-  border: 1px solid #14833f;
+  background: var(--brand);
+  border: 1px solid #cc7a00;
   color: #ffffff;
 }
-[data-theme="light"] #review-btn-rate:hover { background: #15803d; }
+[data-theme="light"] #review-btn-rate:hover { background: #e68a00; }
 
 [data-theme="light"] #review-btn-later,
 [data-theme="light"] #review-btn-never {
