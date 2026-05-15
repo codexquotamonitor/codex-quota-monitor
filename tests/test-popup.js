@@ -178,7 +178,7 @@ module.exports = async function(describe) {
     const { browser, page } = await openPopup(FULL_DATA);
     try {
       const weeklyLabel = await page.$eval('#usage-label', el => el.textContent);
-      assert(weeklyLabel === '5-hour limit',
+      assert(weeklyLabel === 'Current session (5h)',
         `window label translated (got "${weeklyLabel}")`);
 
       const detailsLabel = await page.$eval(

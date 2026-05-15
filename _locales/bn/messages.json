@@ -6,7 +6,10 @@
     "message": "ব্রাউজার টুলবারে সরাসরি আপনার Codex ব্যবহারের সীমা দেখুন।"
   },
   "session_label": {
-    "message": "৫ ঘণ্টার সীমা"
+    "message": "বর্তমান সেশন (৫ ঘণ্টা)"
+  },
+  "session_tooltip_label": {
+    "message": "বর্তমান সেশন"
   },
   "weekly_label": {
     "message": "সাপ্তাহিক"

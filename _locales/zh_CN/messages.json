@@ -6,7 +6,10 @@
     "message": "直接在浏览器工具栏中显示您的 Codex 使用限制。"
   },
   "session_label": {
-    "message": "5 小时限制"
+    "message": "当前会话（5小时）"
+  },
+  "session_tooltip_label": {
+    "message": "当前会话"
   },
   "weekly_label": {
     "message": "每周"

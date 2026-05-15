@@ -6,7 +6,10 @@
     "message": "ब्राउज़र टूलबार में सीधे अपने Codex उपयोग सीमा देखें।"
   },
   "session_label": {
-    "message": "5 घंटे की सीमा"
+    "message": "वर्तमान सत्र (5 घंटे)"
+  },
+  "session_tooltip_label": {
+    "message": "वर्तमान सत्र"
   },
   "weekly_label": {
     "message": "साप्ताहिक"

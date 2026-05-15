@@ -6,7 +6,10 @@
     "message": "يعرض حدود استخدام Codex مباشرةً في شريط أدوات المتصفح."
   },
   "session_label": {
-    "message": "حد 5 ساعات"
+    "message": "الجلسة الحالية (5 س)"
+  },
+  "session_tooltip_label": {
+    "message": "الجلسة الحالية"
   },
   "weekly_label": {
     "message": "أسبوعي"

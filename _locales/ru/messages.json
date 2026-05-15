@@ -6,7 +6,10 @@
     "message": "Показывает лимиты использования Codex прямо на панели браузера."
   },
   "session_label": {
-    "message": "Лимит 5 часов"
+    "message": "Текущая сессия (5 ч)"
+  },
+  "session_tooltip_label": {
+    "message": "Текущая сессия"
   },
   "weekly_label": {
     "message": "Еженедельно"

@@ -6,7 +6,10 @@
     "message": "Menampilkan batas penggunaan Codex langsung di bilah alat browser."
   },
   "session_label": {
-    "message": "Batas 5 jam"
+    "message": "Sesi saat ini (5j)"
+  },
+  "session_tooltip_label": {
+    "message": "Sesi saat ini"
   },
   "weekly_label": {
     "message": "Mingguan"

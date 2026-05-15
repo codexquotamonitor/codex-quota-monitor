@@ -6,7 +6,10 @@
     "message": "Exibe os limites de uso do Codex direto na barra do navegador."
   },
   "session_label": {
-    "message": "Limite de 5 horas"
+    "message": "Sessão atual (5h)"
+  },
+  "session_tooltip_label": {
+    "message": "Sessão atual"
   },
   "weekly_label": {
     "message": "Semanal"

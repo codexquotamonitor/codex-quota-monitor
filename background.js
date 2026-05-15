@@ -190,9 +190,13 @@ chrome.runtime.onInstalled.addListener((details) => {
 
 function buildTitle(u) {
   if (!u || u.usedPercent === undefined) return 'Codex Quota Monitor';
-  const label = chrome.i18n.getMessage(u.windowLabel || 'usage_label') || 'Usage';
-  const remaining = chrome.i18n.getMessage('remaining') || 'remaining';
-  return `${label}: ${u.usedPercent}% · ${remaining}: ${u.remainingPercent}%`;
+  const primary = u.primaryWindow || u;
+  const sessionLabel = chrome.i18n.getMessage('session_tooltip_label') || 'Current session';
+  const weeklyLabel = chrome.i18n.getMessage('weekly_label') || 'Weekly';
+  const sessionSummary = `${sessionLabel}: ${primary.usedPercent}%`;
+
+  if (u.secondaryWindow?.usedPercent === undefined) return sessionSummary;
+  return `${sessionSummary} • ${weeklyLabel}: ${u.secondaryWindow.usedPercent}%`;
 }
 
 function updateBadge(u) {
