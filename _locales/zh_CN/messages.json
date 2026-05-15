@@ -1,6 +1,6 @@
 {
   "ext_name": {
-    "message": "Codex Usage Monitor"
+    "message": "Codex Quota Monitor"
   },
   "ext_description": {
     "message": "直接在浏览器工具栏中显示您的 Codex 使用限制。"
@@ -45,7 +45,7 @@
     "message": "捐款支持"
   },
   "onboarding_title": {
-    "message": "欢迎使用 Codex Usage Monitor"
+    "message": "欢迎使用 Codex Quota Monitor"
   },
   "onboarding_subtitle": {
     "message": "直接在浏览器工具栏中跟踪 Codex 使用量。"
@@ -99,7 +99,7 @@
     "message": "将扩展程序固定到工具栏"
   },
   "onboarding_step4_desc": {
-    "message": "使用浏览器扩展程序菜单固定 Codex Usage Monitor，并让徽标始终可见。"
+    "message": "使用浏览器扩展程序菜单固定 Codex Quota Monitor，并让徽标始终可见。"
   },
   "weekly_all_models": {
     "message": "Codex"
@@ -126,7 +126,7 @@
     "message": "切换到深色模式"
   },
   "review_prompt": {
-    "message": "喜欢 Codex Usage Monitor 吗？"
+    "message": "喜欢 Codex Quota Monitor 吗？"
   },
   "review_rate": {
     "message": "立即评分"

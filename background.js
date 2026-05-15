@@ -1,7 +1,7 @@
 importScripts('usage.js');
 
 /**
- * Service worker for Codex Usage Monitor.
+ * Service worker for Codex Quota Monitor.
  *
  * Reads Codex usage from ChatGPT's authenticated web endpoint and stores only
  * quota metadata locally. Personal identifiers returned by the endpoint are
@@ -189,7 +189,7 @@ chrome.runtime.onInstalled.addListener((details) => {
 });
 
 function buildTitle(u) {
-  if (!u || u.usedPercent === undefined) return 'Codex Usage Monitor';
+  if (!u || u.usedPercent === undefined) return 'Codex Quota Monitor';
   const label = chrome.i18n.getMessage(u.windowLabel || 'usage_label') || 'Usage';
   const remaining = chrome.i18n.getMessage('remaining') || 'remaining';
   return `${label}: ${u.usedPercent}% · ${remaining}: ${u.remainingPercent}%`;
@@ -198,7 +198,7 @@ function buildTitle(u) {
 function updateBadge(u) {
   if (!u || u.usedPercent === undefined) {
     chrome.action.setBadgeText({ text: '' });
-    chrome.action.setTitle({ title: 'Codex Usage Monitor' });
+    chrome.action.setTitle({ title: 'Codex Quota Monitor' });
     return;
   }
 

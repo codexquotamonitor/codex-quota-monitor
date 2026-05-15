@@ -25,7 +25,7 @@ async function describe(suiteName, fn) {
 
 async function run(suites) {
   console.log('\n═══════════════════════════════════════');
-  console.log('  Codex Usage Monitor — Test Suite');
+  console.log('  Codex Quota Monitor — Test Suite');
   console.log('═══════════════════════════════════════');
 
   for (const suite of suites) await suite(describe);

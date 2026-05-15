@@ -1,6 +1,6 @@
 {
   "ext_name": {
-    "message": "Codex Usage Monitor"
+    "message": "Codex Quota Monitor"
   },
   "ext_description": {
     "message": "Показывает лимиты использования Codex прямо на панели браузера."
@@ -45,7 +45,7 @@
     "message": "Поддержать донатом"
   },
   "onboarding_title": {
-    "message": "Добро пожаловать в Codex Usage Monitor"
+    "message": "Добро пожаловать в Codex Quota Monitor"
   },
   "onboarding_subtitle": {
     "message": "Отслеживайте использование Codex прямо на панели браузера."
@@ -99,7 +99,7 @@
     "message": "Закрепите расширение на панели инструментов"
   },
   "onboarding_step4_desc": {
-    "message": "Используйте меню расширений браузера, чтобы закрепить Codex Usage Monitor и оставить значок видимым."
+    "message": "Используйте меню расширений браузера, чтобы закрепить Codex Quota Monitor и оставить значок видимым."
   },
   "weekly_all_models": {
     "message": "Codex"
@@ -126,7 +126,7 @@
     "message": "Переключить на тёмную тему"
   },
   "review_prompt": {
-    "message": "Нравится Codex Usage Monitor?"
+    "message": "Нравится Codex Quota Monitor?"
   },
   "review_rate": {
     "message": "Оценить сейчас"

@@ -1,6 +1,6 @@
 {
   "ext_name": {
-    "message": "Codex Usage Monitor"
+    "message": "Codex Quota Monitor"
   },
   "ext_description": {
     "message": "ब्राउज़र टूलबार में सीधे अपने Codex उपयोग सीमा देखें।"
@@ -45,7 +45,7 @@
     "message": "दान से समर्थन करें"
   },
   "onboarding_title": {
-    "message": "Codex Usage Monitor में आपका स्वागत है"
+    "message": "Codex Quota Monitor में आपका स्वागत है"
   },
   "onboarding_subtitle": {
     "message": "ब्राउज़र टूलबार में सीधे Codex उपयोग ट्रैक करें।"
@@ -99,7 +99,7 @@
     "message": "एक्सटेंशन को टूलबार में पिन करें"
   },
   "onboarding_step4_desc": {
-    "message": "Codex Usage Monitor को पिन करने और बैज को दिखाई देने के लिए ब्राउज़र के एक्सटेंशन मेनू का उपयोग करें।"
+    "message": "Codex Quota Monitor को पिन करने और बैज को दिखाई देने के लिए ब्राउज़र के एक्सटेंशन मेनू का उपयोग करें।"
   },
   "weekly_all_models": {
     "message": "Codex"
@@ -126,7 +126,7 @@
     "message": "डार्क मोड में जाएं"
   },
   "review_prompt": {
-    "message": "Codex Usage Monitor पसंद आ रहा है?"
+    "message": "Codex Quota Monitor पसंद आ रहा है?"
   },
   "review_rate": {
     "message": "अभी रेट करें"

@@ -1,6 +1,6 @@
 {
   "ext_name": {
-    "message": "Codex Usage Monitor"
+    "message": "Codex Quota Monitor"
   },
   "ext_description": {
     "message": "Shows your Codex usage limits directly in the browser toolbar."
@@ -45,7 +45,7 @@
     "message": "Support with a donation"
   },
   "onboarding_title": {
-    "message": "Welcome to <span>Codex Usage</span> Monitor"
+    "message": "Welcome to <span>Codex Quota</span> Monitor"
   },
   "onboarding_subtitle": {
     "message": "Track your Codex usage directly in the browser toolbar."
@@ -99,7 +99,7 @@
     "message": "Pin the extension to your toolbar"
   },
   "onboarding_step4_desc": {
-    "message": "Use your browser extensions menu to pin Codex Usage Monitor and keep the badge visible."
+    "message": "Use your browser extensions menu to pin Codex Quota Monitor and keep the badge visible."
   },
   "weekly_all_models": {
     "message": "Codex"
@@ -126,7 +126,7 @@
     "message": "Switch to dark mode"
   },
   "review_prompt": {
-    "message": "Enjoying Codex Usage Monitor?"
+    "message": "Enjoying Codex Quota Monitor?"
   },
   "review_rate": {
     "message": "Rate now"

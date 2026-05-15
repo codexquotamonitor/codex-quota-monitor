@@ -1,6 +1,6 @@
 {
   "ext_name": {
-    "message": "Codex Usage Monitor"
+    "message": "Codex Quota Monitor"
   },
   "ext_description": {
     "message": "Menampilkan batas penggunaan Codex langsung di bilah alat browser."
@@ -45,7 +45,7 @@
     "message": "Dukung dengan donasi"
   },
   "onboarding_title": {
-    "message": "Selamat datang di Codex Usage Monitor"
+    "message": "Selamat datang di Codex Quota Monitor"
   },
   "onboarding_subtitle": {
     "message": "Pantau penggunaan Codex langsung dari bilah alat browser."
@@ -99,7 +99,7 @@
     "message": "Sematkan ekstensi ke bilah alat"
   },
   "onboarding_step4_desc": {
-    "message": "Gunakan menu ekstensi browser untuk menyematkan Codex Usage Monitor dan menjaga badge tetap terlihat."
+    "message": "Gunakan menu ekstensi browser untuk menyematkan Codex Quota Monitor dan menjaga badge tetap terlihat."
   },
   "weekly_all_models": {
     "message": "Codex"
@@ -126,7 +126,7 @@
     "message": "Beralih ke mode gelap"
   },
   "review_prompt": {
-    "message": "Menikmati Codex Usage Monitor?"
+    "message": "Menikmati Codex Quota Monitor?"
   },
   "review_rate": {
     "message": "Beri nilai sekarang"

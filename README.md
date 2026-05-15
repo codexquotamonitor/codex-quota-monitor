@@ -1,4 +1,4 @@
-# Codex Usage Monitor
+# Codex Quota Monitor
 
 Prototype Chrome/Brave extension for monitoring Codex usage limits from the browser toolbar.
 
@@ -15,7 +15,7 @@ Prototype Chrome/Brave extension for monitoring Codex usage limits from the brow
 1. Open `brave://extensions`
 2. Enable developer mode
 3. Click **Load unpacked**
-4. Select `C:\Claude\codex-usage-monitor`
+4. Select `C:\Claude\codex-quota-monitor`
 5. Open `https://chatgpt.com/codex/cloud/settings/analytics` while logged in
 6. Click the extension icon
 

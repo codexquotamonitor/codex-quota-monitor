@@ -1,6 +1,6 @@
 {
   "ext_name": {
-    "message": "Codex Usage Monitor"
+    "message": "Codex Quota Monitor"
   },
   "ext_description": {
     "message": "Affiche vos limites d’utilisation de Codex directement dans la barre du navigateur."
@@ -45,7 +45,7 @@
     "message": "Soutenir par un don"
   },
   "onboarding_title": {
-    "message": "Bienvenue dans Codex Usage Monitor"
+    "message": "Bienvenue dans Codex Quota Monitor"
   },
   "onboarding_subtitle": {
     "message": "Suivez l’utilisation de Codex directement dans la barre du navigateur."
@@ -99,7 +99,7 @@
     "message": "Épinglez l'extension dans la barre d'outils"
   },
   "onboarding_step4_desc": {
-    "message": "Utilisez le menu des extensions du navigateur pour épingler Codex Usage Monitor et garder le badge visible."
+    "message": "Utilisez le menu des extensions du navigateur pour épingler Codex Quota Monitor et garder le badge visible."
   },
   "weekly_all_models": {
     "message": "Codex"
@@ -126,7 +126,7 @@
     "message": "Passer au mode sombre"
   },
   "review_prompt": {
-    "message": "Vous appréciez Codex Usage Monitor ?"
+    "message": "Vous appréciez Codex Quota Monitor ?"
   },
   "review_rate": {
     "message": "Évaluer maintenant"

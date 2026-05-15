@@ -1,5 +1,5 @@
 {
-  "name": "codex-usage-monitor",
+  "name": "codex-quota-monitor",
   "private": true,
   "scripts": {
     "test": "node tests/run.js"
