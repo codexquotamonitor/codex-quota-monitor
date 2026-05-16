@@ -1,18 +1,16 @@
 # Dependencies
 node_modules/
 
-# Dev & build tools (internal scripts)
-dev-tools/
-
 # Release ZIPs and backups
 releases/
 
-# Store assets (generated images & screenshots)
-store-assets/
+# Generated images outside the maintained store asset set
 *.svg
 *.zip
 *.png
 !icons/*.png
+!store-assets/
+!store-assets/**/*.png
 icons/*-new.png
 
 # Website files (hosted separately at claudequotamonitor.github.io)

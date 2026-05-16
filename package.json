@@ -2,7 +2,8 @@
   "name": "codex-quota-monitor",
   "private": true,
   "scripts": {
-    "test": "node tests/run.js"
+    "test": "node tests/run.js",
+    "store-assets": "node dev-tools/make-all-assets.js"
   },
   "devDependencies": {
     "pngjs": "^7.0.0",
