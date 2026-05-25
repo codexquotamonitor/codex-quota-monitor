@@ -81,7 +81,7 @@
     "message": "喜欢这个扩展？捐款支持"
   },
   "onboarding_footer": {
-    "message": "免费开放。无需账户，不追踪数据。"
+    "message": "无需账户。本地数据。不跟踪。"
   },
   "pill_session": {
     "message": "会话用量 (5小时)"
@@ -96,7 +96,7 @@
     "message": "工具栏徽标"
   },
   "pill_free": {
-    "message": "免费"
+    "message": "本地数据"
   },
   "onboarding_step4_title": {
     "message": "将扩展程序固定到工具栏"

@@ -17,7 +17,7 @@ const html = `<!doctype html>
     p { color:#9fb0bc; font-size:18px; line-height:1.55; }
     .pills { display:flex; flex-wrap:wrap; gap:9px; }
     .pill { color:#ffb74d; background:rgba(230,126,0,.12); border:1px solid rgba(230,126,0,.3); border-radius:999px; padding:6px 14px; font-size:13px; }
-    .badge { position:absolute; left:251px; bottom:48px; color:#78909c; font-size:13px; }
+    .store-note { position:absolute; left:251px; bottom:48px; color:#78909c; font-size:13px; }
   `)}
 </style></head><body>
   <div class="safe">
@@ -27,12 +27,12 @@ const html = `<!doctype html>
       <div class="pills">
         <span class="pill">Current session</span><span class="pill">Weekly limits</span>
         <span class="pill">Credits</span><span class="pill">Background refresh</span>
-        <span class="pill">10 languages</span><span class="pill">Free</span><span class="pill">Open source</span>
+        <span class="pill">10 languages</span><span class="pill">Local data</span><span class="pill">No account</span>
       </div>
     </div>
     ${popupHtml(en)}
   </div>
-  <div class="badge">Available free on the Chrome Web Store</div>
+  <div class="store-note">Browser toolbar quota tracking</div>
 </body></html>`;
 
 renderPng({ html, width: 2048, height: 1152, out: path.join(STORE_ASSETS, 'yt-banner.png') });

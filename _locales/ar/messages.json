@@ -81,7 +81,7 @@
     "message": "أعجبك؟ ادعم بتبرع"
   },
   "onboarding_footer": {
-    "message": "مجاني ومفتوح. بدون حساب، بدون تتبع."
+    "message": "بدون حساب. بيانات محلية. بدون تتبع."
   },
   "pill_session": {
     "message": "استخدام الجلسة (5 ساعات)"
@@ -96,7 +96,7 @@
     "message": "شارة في شريط الأدوات"
   },
   "pill_free": {
-    "message": "مجاني"
+    "message": "بيانات محلية"
   },
   "onboarding_step4_title": {
     "message": "ثبّت الإضافة في شريط الأدوات"

@@ -81,7 +81,7 @@
     "message": "Vous aimez ? Soutenez avec un don"
   },
   "onboarding_footer": {
-    "message": "Gratuit et ouvert. Sans compte, sans suivi."
+    "message": "Sans compte. Données locales. Aucun suivi."
   },
   "pill_session": {
     "message": "Usage de session (5h)"
@@ -96,7 +96,7 @@
     "message": "Badge dans la barre"
   },
   "pill_free": {
-    "message": "Gratuit"
+    "message": "Données locales"
   },
   "onboarding_step4_title": {
     "message": "Épinglez l'extension dans la barre d'outils"

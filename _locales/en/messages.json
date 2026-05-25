@@ -81,7 +81,7 @@
     "message": "Enjoying it? Support with a donation"
   },
   "onboarding_footer": {
-    "message": "Free & open. No account, no tracking."
+    "message": "No account. Local data. No tracking."
   },
   "pill_session": {
     "message": "Session usage (5h)"
@@ -96,7 +96,7 @@
     "message": "Badge in toolbar"
   },
   "pill_free": {
-    "message": "Free"
+    "message": "Local data"
   },
   "onboarding_step4_title": {
     "message": "Pin the extension to your toolbar"

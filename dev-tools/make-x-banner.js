@@ -26,7 +26,7 @@ const html = `<!doctype html>
       <div class="pills">
         <span class="pill">Current session</span><span class="pill">Weekly limits</span>
         <span class="pill">Background refresh</span><span class="pill">10 languages</span>
-        <span class="pill">Chrome · Brave · Edge · Arc</span><span class="pill">Open source</span>
+        <span class="pill">Chrome · Brave · Edge · Arc</span><span class="pill">Local data</span>
       </div>
     </div>
     ${popupHtml(en)}

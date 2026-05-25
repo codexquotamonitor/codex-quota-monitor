@@ -17,7 +17,7 @@ const html = `<!doctype html>
     p { color:#9fb0bc; font-size:17px; line-height:1.55; }
     .pills { display:flex; flex-wrap:wrap; gap:8px; }
     .pill { color:#ffb74d; background:rgba(230,126,0,.12); border:1px solid rgba(230,126,0,.3); border-radius:999px; padding:5px 13px; font-size:12px; }
-    .badge { position:absolute; left:108px; bottom:28px; color:#78909c; font-size:12px; }
+    .store-note { position:absolute; left:108px; bottom:28px; color:#78909c; font-size:12px; }
   `)}
 </style></head><body>
   <div class="layout">
@@ -27,12 +27,12 @@ const html = `<!doctype html>
       <div class="pills">
         <span class="pill">Current session (5h)</span><span class="pill">Weekly limits</span>
         <span class="pill">Credits</span><span class="pill">Background refresh</span>
-        <span class="pill">10 languages</span><span class="pill">Free</span>
+        <span class="pill">10 languages</span><span class="pill">Local data</span>
       </div>
     </div>
     ${popupHtml(en)}
   </div>
-  <div class="badge">Available free on the Chrome Web Store</div>
+  <div class="store-note">Browser toolbar quota tracking</div>
 </body></html>`;
 
 renderPng({ html, width: 1400, height: 560, out: path.join(STORE_ASSETS, 'marquee.png') });

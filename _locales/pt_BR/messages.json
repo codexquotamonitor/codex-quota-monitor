@@ -81,7 +81,7 @@
     "message": "Curtiu? Apoie com uma doação"
   },
   "onboarding_footer": {
-    "message": "Gratuito e aberto. Sem conta, sem rastreamento."
+    "message": "Sem conta. Dados locais. Sem rastreamento."
   },
   "pill_session": {
     "message": "Uso da sessão (5h)"
@@ -96,7 +96,7 @@
     "message": "Badge na barra"
   },
   "pill_free": {
-    "message": "Gratuito"
+    "message": "Dados locais"
   },
   "onboarding_step4_title": {
     "message": "Fixe a extensão na barra do navegador"

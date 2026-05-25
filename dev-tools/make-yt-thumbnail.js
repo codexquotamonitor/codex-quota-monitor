@@ -23,7 +23,7 @@ const html = `<!doctype html>
       <div class="eyebrow">${logo(44)} Codex Quota Monitor</div>
       <h1>Keep an eye on your <span>Codex quota.</span></h1>
       <p>Current session, weekly limits and credits in the browser toolbar.</p>
-      <div class="pill">Free Chrome Extension</div>
+      <div class="pill">Browser toolbar quota tracking</div>
     </div>
     ${popupHtml(en)}
   </div>

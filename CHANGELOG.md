@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1] — 2026-05-24
+
+### Fixed
+
+- Removed promotional wording from Chrome Web Store assets to comply with listing metadata policy.
+- Replaced onboarding “free” wording with neutral privacy-focused labels.
+
 ## [1.0] — 2026-05-16
 
 ### Added

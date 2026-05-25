@@ -81,7 +81,7 @@
     "message": "Suka? Dukung dengan donasi"
   },
   "onboarding_footer": {
-    "message": "Gratis & terbuka. Tanpa akun, tanpa pelacakan."
+    "message": "Tanpa akun. Data lokal. Tanpa pelacakan."
   },
   "pill_session": {
     "message": "Penggunaan sesi (5j)"
@@ -96,7 +96,7 @@
     "message": "Badge di bilah alat"
   },
   "pill_free": {
-    "message": "Gratis"
+    "message": "Data lokal"
   },
   "onboarding_step4_title": {
     "message": "Sematkan ekstensi ke bilah alat"

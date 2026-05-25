@@ -21,7 +21,7 @@ const html = `<!doctype html>
     <p>Track your Codex usage limits directly in the browser toolbar.</p>
     <div class="pills">
       <span class="pill">Current session</span><span class="pill">Weekly limits</span>
-      <span class="pill">Credits</span><span class="pill">10 languages</span><span class="pill">Free</span>
+      <span class="pill">Credits</span><span class="pill">10 languages</span><span class="pill">Local data</span>
     </div>
   </div>
 </body></html>`;
