@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.2] — 2026-06-03
+
+### Fixed
+
+- Updated the popup website shortcut and extension homepage URL to use the official Codex Quota Monitor website.
+
 ## [1.0.1] — 2026-05-24
 
 ### Fixed

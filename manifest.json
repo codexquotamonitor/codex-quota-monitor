@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_ext_name__",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "__MSG_ext_description__",
   "default_locale": "pt_BR",
   "icons": {
@@ -23,7 +23,7 @@
       "128": "icons/icon128.png"
     }
   },
-  "homepage_url": "https://chatgpt.com/codex/cloud/settings/analytics",
+  "homepage_url": "https://codexquotamonitor.github.io/",
   "content_scripts": [
     {
       "matches": ["https://chatgpt.com/codex/*"],

@@ -238,6 +238,7 @@ chrome.storage.onChanged.addListener((changes) => {
 
 /* ── Buttons ── */
 const CODEX_USAGE_URL = 'https://chatgpt.com/codex/cloud/settings/analytics';
+const OFFICIAL_SITE_URL = 'https://codexquotamonitor.github.io/';
 const CODEX_TAB_QUERY = 'https://chatgpt.com/codex/*';
 const SYNC_TIMEOUT_MS = 10_000;
 let syncTimer = null;
@@ -257,7 +258,7 @@ document.addEventListener('click', (e) => {
 
 document.getElementById('site-btn').addEventListener('click', (e) => {
   e.preventDefault();
-  chrome.tabs.create({ url: CODEX_USAGE_URL });
+  chrome.tabs.create({ url: OFFICIAL_SITE_URL });
 });
 
 const syncBtn = document.getElementById('sync-btn');
